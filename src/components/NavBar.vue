@@ -1,11 +1,14 @@
 <template>
-    <v-app-bar
+
+
+    <!-- <v-app-bar
       app
       color="white"
       light
     >
       <v-toolbar-title>
-        Jaeyoung Lee
+        <span class="font-weight-light">Jaeyoung</span>
+        <span>Lee</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -41,11 +44,28 @@
       >
         <v-icon>menu</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-app-bar> -->
+    <!-- <nav>
+      <v-toolbar flat app>
+        <v-toolbar-title class="text-uppercase grey--text">
+          <span class="font-weight-light">Jaeyoung</span>
+          <span>Lee</span>
+        </v-toolbar-title>
+
+        <v-spacer></v-spacer>
+
+        <nav>
+          <span>Lee</span>
+          <v-icon right>exit_to_app</v-icon>
+        </nav>
+      </v-toolbar>      
+    </nav> -->
 </template>
 
 <script>
 export default {
-    
+  data() {
+
+  }
 }
 </script>
