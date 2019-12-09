@@ -1,7 +1,7 @@
 <template>
 
 
-    <!-- <v-app-bar
+    <v-app-bar
       app
       color="white"
       light
@@ -44,7 +44,7 @@
       >
         <v-icon>menu</v-icon>
       </v-btn>
-    </v-app-bar> -->
+    </v-app-bar>
     <!-- <nav>
       <v-toolbar flat app>
         <v-toolbar-title class="text-uppercase grey--text">
