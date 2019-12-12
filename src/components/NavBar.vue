@@ -6,24 +6,31 @@
       color="white"
       light
     >
+
       <v-toolbar-title>
-        <span class="font-weight-light">Jaeyoung</span>
-        <span>Lee</span>
+        <v-btn
+          href="/"
+          target = "_self"
+          text
+        >
+          <span class="font-weight-light">Jaeyoung</span>
+          <span>Lee</span>
+        </v-btn>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-btn
         href="/about"
-        target="_blank"
+        target = "_self"
         text
       >
         <span class="mr-2">about</span>
       </v-btn>
 
       <v-btn
-        href="/about"
-        target="_blank"
+        href="/projects"
+        target = "_self"
         text
       >
         <span class="mr-2">projects</span>
@@ -31,7 +38,7 @@
 
       <v-btn
         href="/about"
-        target="_blank"
+        target = "_self"
         text
       >
         <span class="mr-2">design</span>
