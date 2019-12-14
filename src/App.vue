@@ -1,9 +1,9 @@
 <template>
   <v-app class="grey lighten-4">
     <NavBar />
-    <v-content>
+    
       <router-view />
-    </v-content>
+    
     <Footer />
   </v-app>
 </template>

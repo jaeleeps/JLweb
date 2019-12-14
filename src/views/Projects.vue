@@ -13,7 +13,7 @@
       <v-flex xs0 md2 />
     </v-layout>    
 
-    <v-row>
+    <v-row justify-center>
       <v-flex xs12 md2>
         <ProjectCard />
       </v-flex>

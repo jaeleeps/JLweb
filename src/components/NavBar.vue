@@ -3,8 +3,8 @@
 
     <v-app-bar
       app
-      color="white"
-      light
+      class="elevation-0"
+      color="transparent"
     >
 
       <v-toolbar-title>
@@ -52,21 +52,6 @@
         <v-icon>menu</v-icon>
       </v-btn>
     </v-app-bar>
-    <!-- <nav>
-      <v-toolbar flat app>
-        <v-toolbar-title class="text-uppercase grey--text">
-          <span class="font-weight-light">Jaeyoung</span>
-          <span>Lee</span>
-        </v-toolbar-title>
-
-        <v-spacer></v-spacer>
-
-        <nav>
-          <span>Lee</span>
-          <v-icon right>exit_to_app</v-icon>
-        </nav>
-      </v-toolbar>      
-    </nav> -->
 </template>
 
 <script>
