@@ -10,7 +10,7 @@
             >
               <div class="main-text">
                 <p class="intro">
-                  <span>Jaeyoung Lee,</span>
+                  <span class="outline-font">Jaeyoung Lee,</span>
                   <span>Sofrware Engineer</span>
                   <span>in Seoul.</span>
                 </p>
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style scoped>
+@import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
+@import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
+
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
   background-color: #D1D2D4;
@@ -67,6 +70,15 @@ export default {
 
 .intro span 
 {
-    display: block;
+  /* font-family: Druk Wide Cy TT Medium; */
+  font-family: Optima Thin;
+  font-size: 4rem;
+  display: block;
+}
+
+.outline-font {
+    /* color: #D1D2D4;
+    text-shadow: #000 0px 0px 1.5px; */
+    -webkit-font-smoothing: antialiased;
 }
 </style>
