@@ -1,6 +1,4 @@
 <template>
-
-
     <v-app-bar
       app
       class="elevation-0"
