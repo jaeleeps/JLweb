@@ -5,8 +5,7 @@
         <v-layout>
           <v-row>
             <v-flex 
-              xs12 md10
-              
+              xs12 md7
             >
               <div class="main-text">
                 <p class="intro">
@@ -16,11 +15,16 @@
                 </p>
               </div>
             </v-flex>
-            <v-flex xs12 md2>
-              <div class="main-text">
-                <p>Jaeyoung Lee,</p>
-                <p>Jaeyoung Lee,</p>
-                <p>Jaeyoung Lee,</p>
+            <v-flex xs12 md5>
+              <div class="btn-area">
+                <p class="link-para">
+                  <span>
+                    <v-btn class="ma-2" outlined color="grey darken-4">Outlined Button</v-btn>
+                  </span>
+                  <span>
+                    <v-btn class="ma-2" outlined color="grey darken-4">Outlined Button</v-btn>
+                  </span>                  
+                </p>
               </div>
             </v-flex>
           </v-row>
@@ -64,7 +68,7 @@ export default {
 .main-text {
   height: 100%;
   display: flex;
-  justify-content: center; /* align horizontal */
+  justify-content: flex-end; /* align horizontal */
   align-items: center; /* align vertical */
 }
 
@@ -74,6 +78,7 @@ export default {
   font-family: Optima Thin;
   font-size: 4rem;
   display: block;
+  
 }
 
 .outline-font {
@@ -81,4 +86,20 @@ export default {
     text-shadow: #000 0px 0px 1.5px; */
     -webkit-font-smoothing: antialiased;
 }
+
+.btn-area {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.link-para span 
+{
+  /* font-family: Druk Wide Cy TT Medium; */
+  display: block;
+  
+}
+
+
 </style>
