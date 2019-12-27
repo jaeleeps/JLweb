@@ -15,15 +15,37 @@
                 </p>
               </div>
             </v-flex>
-            <v-flex xs12 md5>
+            <v-flex xs0 md1 />
+            <v-flex xs12 md4>
               <div class="btn-area">
                 <p class="link-para">
                   <span>
-                    <v-btn class="ma-2" outlined color="grey darken-4">Outlined Button</v-btn>
+                    <v-btn class="ma-0" block outlined color="grey darken-4">ABOUT</v-btn>
                   </span>
                   <span>
-                    <v-btn class="ma-2" outlined color="grey darken-4">Outlined Button</v-btn>
-                  </span>                  
+                    <v-btn class="ma-0" block outlined color="grey darken-4">PROJECTS</v-btn>
+                  </span>
+                  <span>
+                    <v-btn class="ma-" block outlined color="grey darken-4">DESIGN</v-btn>
+                  </span>                            
+                  <span
+                    margin-top="-8px"
+                    class="icon-btn-span" 
+                    flex
+                    justify-items="center">
+                    <!-- <v-btn class="ma-2" outlined fab small color="grey darken-4">
+                      <v-icon >mdi-github-circle</v-icon>
+                    </v-btn> -->
+                    <v-btn class="ma-2" outlined fab small color="grey darken-4">
+                      <v-icon >mdi-github-circle</v-icon>
+                    </v-btn>
+                    <v-btn class="ma-2" outlined fab small color="grey darken-4">
+                      <v-icon >mdi-npm-variant-outline</v-icon>
+                    </v-btn>
+                    <v-btn class="ma-2" outlined fab small color="grey darken-4">
+                      <v-icon >mdi-linkedin</v-icon>
+                    </v-btn>                                  
+                  </span>        
                 </p>
               </div>
             </v-flex>
@@ -94,12 +116,21 @@ export default {
   align-items: center; /* align vertical */
 }
 
+.link-para {
+  /* width: 33%; */
+}
+
 .link-para span 
 {
   /* font-family: Druk Wide Cy TT Medium; */
   display: block;
-  
+  margin-bottom: 12px;
 }
+
+.link-para .icon-btn-span {
+
+}
+
 
 
 </style>
