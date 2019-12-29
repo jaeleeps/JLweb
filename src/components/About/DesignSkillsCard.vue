@@ -14,7 +14,7 @@
       </v-chip-group>
     </v-card-text>
   </v-card> -->
-  <v-card max-width="400" class="mx-auto">
+  <v-card  class="ma-4" >
     <v-card-text>
       <v-menu
         v-for="(tag, i) in tags" 
@@ -26,6 +26,7 @@
       >
         <template v-slot:activator="{ on }">
           <v-chip
+            class="ma-2"
             pill
             v-on="on"
           >
@@ -73,22 +74,70 @@ export default {
     tags: [
       {
         title: "Javascript",
-        color: "red",
-        icon: "mdi-account",
+        color: "warning",
+        icon: "mdi-language-javascript",
         rating: 5,
       },
       {
         title: "Java",
-        color: "primary",
-        icon: "mdi-account",
+        color: "red",
+        icon: "mdi-language-java",
         rating: 5,
       },
-        {
+      {
         title: "Python",
         color: "primary",
-        icon: "mdi-account",
+        icon: "mdi-language-python",
         rating: 5,
-      }
+      },
+      {
+        title: "HTML/CSS",
+        color: "amber",
+        icon: "mdi-language-html5",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },    
     ]
   })
 };

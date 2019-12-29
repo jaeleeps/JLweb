@@ -32,8 +32,8 @@
                   <span>
                     <v-timeline>
                       <v-timeline-item
-                        v-for="item in academics_data"
-                        :key="item.index"
+                        v-for="(item, i) in academics_data"
+                        :key="i"
                         color="grey lighten-2"
                         small
                       >
@@ -56,16 +56,29 @@
               </v-flex>
             </v-row>
             <v-row>
-              <v-flex xs12 md12>
-                <p class="about-para">
-                  <span class="subtitle">Skills</span>
-                  <span class="subsubtitle">Programming</span>
-                  <span>
-                    <SkillsCard />
-                  </span>
-                  <span class="subsubtitle">Language</span>
-                </p>
-              </v-flex>
+              <v-layout flex-wrap>
+                <v-flex xs12 md12>
+                  <p class="about-para">
+                    <span class="subtitle">Skills</span>
+                  </p>
+                </v-flex>
+                <v-flex xs12 md6>
+                    <span class="subsubtitle ma-5">Programming Lang&Tool</span>
+                    <ProgrammingSkillsCard style="margin:1rem;"/>
+                </v-flex>
+                <v-flex xs12 md6>
+                    <span class="subsubtitle ma-5">Design Tool</span>
+                    <DesignSkillsCard style="margin:1rem;" />
+                </v-flex>
+                <v-flex xs12 md6>
+                    <span class="subsubtitle ma-5">Design Tool</span>
+                    <DesignSkillsCard style="margin:1rem;" />
+                </v-flex>
+                <v-flex xs12 md6>
+                    <span class="subsubtitle ma-5">Design Tool</span>
+                    <DesignSkillsCard style="margin:1rem;" />
+                </v-flex>
+              </v-layout>
             </v-row>
           </v-flex>
           <v-flex xs0 md3></v-flex>
@@ -76,16 +89,17 @@
 </template>
 
 <script>
-import SkillsCard from "@/components/About/SkillsCard";
+import DesignSkillsCard from "@/components/About/DesignSkillsCard";
+import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
 
 export default {
   components: {
-    SkillsCard
+    DesignSkillsCard,
+    ProgrammingSkillsCard
   },
   data: () => ({
     academics_data: [
       {
-        index: 0,
         year: "2014~2017",
         title: "Hankuk Academy of Foreign Studides",
         info: [
@@ -95,7 +109,6 @@ export default {
         ]
       },
       {
-        index: 0,
         year: "2017~",
         title: "Georgia Institue of Technology",
         info: [
@@ -124,9 +137,10 @@ export default {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
+  margin-bottom: 0px;
 }
 
-.about-para > .subsubtitle {
+.subsubtitle {
   font-size: 1.3rem;
   font-weight: 300;
   text-transform: uppercase;
