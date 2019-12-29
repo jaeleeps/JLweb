@@ -135,21 +135,21 @@ export default {
       },
       {
         title: "C++",
-        color: "primary",
-        icon: "mdi-language-python",
+        color: "indigo",
+        icon: "mdi-language-cpp",
         rating: 5,
       },
       {
         title: "Go Lang",
-        color: "primary",
-        icon: "mdi-language-python",
-        rating: 5,
+        color: "teal accent-3",
+        icon: "mdi-language-go",
+        rating: "신여진 병신",
       },  
       {
         title: "Unity",
-        color: "primary",
-        icon: "mdi-language-python",
-        rating: 5,
+        color: "grey darken-4",
+        icon: "mdi-unity",
+        rating: "",
       },    
     ],
     design: [
@@ -192,17 +192,47 @@ export default {
     ],
     language : [
       {
-        title: "lang",
+        title: "Korean",
+        color: "blue",
+        icon: "mdi-alpha-k-circle",
+        rating: "Native",
+      },
+      {
+        title: "English",
+        color: "green",
+        icon: "mdi-alpha-e-circle",
+        rating: "Native",
+      },
+      {
+        title: "Chinese",
         color: "red",
-        icon: "mdi-video-3d",
+        icon: "mdi-alpha-c-circle",
         rating: "",
       }
     ],
     etc : [
       {
-        title: "ETC",
+        title: "Leadership",
         color: "red",
-        icon: "mdi-video-3d",
+        icon: "mdi-account-group",
+        rating: "",
+      },
+      {
+        title: "Public Speaking/Presentation",
+        color: "deep-purple",
+        icon: "mdi-voice",
+        rating: "",
+      },
+      {
+        title: "Event Organizing",
+        color: "light-blue",
+        icon: "mdi-party-popper",
+        rating: "",
+      },
+      {
+        title: "Marketing/Advertisement",
+        color: "green",
+        icon: "mdi-shopping",
         rating: "",
       }
     ]

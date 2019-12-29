@@ -129,8 +129,8 @@ export default {
       },
       {
         title: "C++",
-        color: "primary",
-        icon: "mdi-language-python",
+        color: "indigo",
+        icon: "mdi-language-cpp",
         rating: 5,
       },
       {
@@ -142,7 +142,7 @@ export default {
       {
         title: "Unity",
         color: "primary",
-        icon: "mdi-language-python",
+        icon: "mdi-unity",
         rating: 5,
       },    
     ],
