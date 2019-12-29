@@ -145,6 +145,7 @@ export default {
 
 <style scoped>
 .lang-description {
-  font-weight: 100;
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 </style>

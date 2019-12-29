@@ -73,10 +73,10 @@ export default {
   data: () => ({
     tags: [
       {
-        title: "Javascript",
+        title: "Adobe Photoshop",
         color: "warning",
-        icon: "mdi-language-javascript",
-        rating: 5,
+        icon: "mdi-adobe",
+        rating: "",
       },
       {
         title: "Java",
