@@ -17,7 +17,7 @@
   <v-card  class="ma-4" >
     <v-card-text>
       <v-menu
-        v-for="(tag, i) in tags" 
+        v-for="(tag, i) in getTypes()" 
         :key="i"
         bottom
         right
@@ -70,8 +70,15 @@
 
 <script>
 export default {
+  props: ['skill_type'],
+  methods: {
+    getTypes : function() {
+      if (this.skill_type == "programming")  
+        return this.programming
+    }
+  },
   data: () => ({
-    tags: [
+    programming : [
       {
         title: "Javascript",
         color: "warning",
@@ -138,6 +145,44 @@ export default {
         icon: "mdi-language-python",
         rating: 5,
       },    
+    ],
+    design: [
+      {
+        title: "Adobe Photoshop",
+        color: "blue",
+        icon: "mdi-adobe",
+        rating: "",
+      },
+      {
+        title: "Adobe Illustrator",
+        color: "orange",
+        icon: "mdi-adobe",
+        rating: "",
+      },
+      {
+        title: "Adobe InDesign",
+        color: "deep-purple",
+        icon: "mdi-adobe",
+        rating: "",
+      },
+      {
+        title: "Blender",
+        color: "orange",
+        icon: "mdi-blender-software",
+        rating: "",
+      }, 
+      {
+        title: "Substance Designer",
+        color: "deep-orange",
+        icon: "mdi-hexagon",
+        rating: "",
+      },
+      {
+        title: "Rhino",
+        color: "red",
+        icon: "mdi-video-3d",
+        rating: "",
+      }
     ]
   })
 };

@@ -63,20 +63,20 @@
                   </p>
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Programming Lang&Tool</span>
-                    <ProgrammingSkillsCard style="margin:1rem;"/>
+                    <span class="subsubtitle ma-5">Programming Lang & Tool</span>
+                    <SkillsCard skill_type="programming" style="margin:1rem;"/>
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Design Tool</span>
-                    <DesignSkillsCard style="margin:1rem;" />
+                    <span class="subsubtitle ma-5">Design & Modeling</span>
+                    <SkillsCard skill_type="design" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Design Tool</span>
-                    <DesignSkillsCard style="margin:1rem;" />
+                    <span class="subsubtitle ma-5">Language</span>
+                    <SkillsCard skill_type="language" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Design Tool</span>
-                    <DesignSkillsCard style="margin:1rem;" />
+                    <span class="subsubtitle ma-5">ETC</span>
+                    <SkillsCard skill_type="etc" style="margin:1rem;" />
                 </v-flex>
               </v-layout>
             </v-row>
@@ -89,15 +89,18 @@
 </template>
 
 <script>
+import SkillsCard from '@/components/About/SkillsCard'
 import DesignSkillsCard from "@/components/About/DesignSkillsCard";
 import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
 
 export default {
   components: {
     DesignSkillsCard,
-    ProgrammingSkillsCard
+    ProgrammingSkillsCard,
+    SkillsCard
   },
   data: () => ({
+    skill_type : "",
     academics_data: [
       {
         year: "2014~2017",

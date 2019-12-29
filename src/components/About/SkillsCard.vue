@@ -17,7 +17,7 @@
   <v-card  class="ma-4" >
     <v-card-text>
       <v-menu
-        v-for="(tag, i) in tags" 
+        v-for="(tag, i) in getTypes()" 
         :key="i"
         bottom
         right
@@ -42,7 +42,7 @@
               </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title>{{tag.title}}</v-list-item-title>
-                <v-list-item-subtitle>{{tag.rating}}</v-list-item-subtitle>
+                <!-- <v-list-item-subtitle>{{tag.rating}}</v-list-item-subtitle> -->
               </v-list-item-content>
               <v-list-item-action>
                 <v-btn
@@ -54,14 +54,14 @@
               </v-list-item-action>
             </v-list-item>
           </v-list>
-          <!-- <v-list>
+          <v-list>
             <v-list-item @click="() => {}">
-              <v-list-item-action>
+              <!-- <v-list-item-action>
                 <v-icon>mdi-briefcase</v-icon>
-              </v-list-item-action>
-              <v-list-item-subtitle>john@gmail.com</v-list-item-subtitle>
+              </v-list-item-action> -->
+              <span class="lang-description"> {{tag.rating}} </span>
             </v-list-item>
-          </v-list> -->
+          </v-list>
         </v-card>
       </v-menu>
     </v-card-text>
@@ -70,8 +70,89 @@
 
 <script>
 export default {
+  props: ['skill_type'],
+  methods: {
+    getTypes : function() {
+      if (this.skill_type == "programming")  
+        return this.programming
+      if (this.skill_type == "design")  
+        return this.design
+      if (this.skill_type == "language")  
+        return this.language
+      if (this.skill_type == "etc")  
+        return this.etc
+    }
+  },
   data: () => ({
-    tags: [
+    programming : [
+      {
+        title: "Javascript",
+        color: "warning",
+        icon: "mdi-language-javascript",
+        rating: 5,
+      },
+      {
+        title: "Java",
+        color: "red",
+        icon: "mdi-language-java",
+        rating: 5,
+      },
+      {
+        title: "Python",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "HTML/CSS",
+        color: "amber",
+        icon: "mdi-language-html5",
+        rating: 5,
+      },
+      {
+        title: "Vue.js",
+        color: "teal darken-4",
+        icon: "mdi-vuejs",
+        rating: "Vuetify",
+      },
+      {
+        title: "React.js",
+        color: "purple",
+        icon: "mdi-react",
+        rating: 5,
+      },
+      {
+        title: "Node.js",
+        color: "green",
+        icon: "mdi-nodejs",
+        rating: 5,
+      },
+      {
+        title: "SQL, MongoDB",
+        color: "primary",
+        icon: "mdi-database",
+        rating: "Able to design a basic DB using MySQL and MongoDB and connect it to fron-end webpage ",
+      },
+      {
+        title: "C++",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },
+      {
+        title: "Go Lang",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },  
+      {
+        title: "Unity",
+        color: "primary",
+        icon: "mdi-language-python",
+        rating: 5,
+      },    
+    ],
+    design: [
       {
         title: "Adobe Photoshop",
         color: "blue",
@@ -108,7 +189,30 @@ export default {
         icon: "mdi-video-3d",
         rating: "",
       }
+    ],
+    language : [
+      {
+        title: "lang",
+        color: "red",
+        icon: "mdi-video-3d",
+        rating: "",
+      }
+    ],
+    etc : [
+      {
+        title: "ETC",
+        color: "red",
+        icon: "mdi-video-3d",
+        rating: "",
+      }
     ]
   })
 };
 </script>
+
+<style scoped>
+.lang-description {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+</style>
