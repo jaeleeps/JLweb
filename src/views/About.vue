@@ -28,7 +28,7 @@
             <v-row>
               <v-flex xs12 md12>
                 <p class="about-para">
-                  <span class="subtitle">Academics</span>
+                  <span class="subtitle">Academics & Work Experiences</span>
                   <span>
                     <v-timeline>
                       <v-timeline-item
@@ -42,6 +42,7 @@
                         </template>
                         <v-card class="elevation-2">
                           <v-card-title class="title" v-text="item.title" />
+                          <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle"/>
                           <v-card-text
                             style="padding-top: 0px; padding-bottom: 8px;"
                             v-for="text in item.info"
@@ -105,8 +106,8 @@ export default {
       {
         year: "2014~2017",
         title: "Hankuk Academy of Foreign Studides",
+        subtitle: "International Div. Class of 2017",
         info: [
-          "International Div. Class of 2017",
           " Major in Chinese Language",
           "GPA: 3.88/4.0"
         ]
@@ -114,11 +115,19 @@ export default {
       {
         year: "2017~",
         title: "Georgia Institue of Technology",
+        subtitle: "Bachelor of Science in Computer Science",
         info: [
-          "Bachelor of Science in Computer Science",
           "Minor in Industrial Design",
           "Major GPA: 4.0/4.0",
           "Overall GPA: 3.86/4.0"
+        ]
+      },
+      {
+        year: "2018",
+        title: "Naver D2 - Campus Q",
+        subtitle: "Node.js Developer",
+        info: [
+          "CampusQ was a chatbot-integrated education platform developing start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app).",
         ]
       }
     ]
