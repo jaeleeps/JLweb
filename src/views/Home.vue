@@ -2,7 +2,7 @@
   <div id="app" class="back" v-on:mousemove="someMethod">
     <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
-      <v-container>
+      <v-container >
         <v-layout>
           <v-row>
             <v-flex xs12 md12 style="text-align: center;">
@@ -52,6 +52,7 @@ export default {
     },
     getPos: function(x) {
       // console.log(`${this.xPos}px ${this.yPos}px`)
+      // console.log(this.$route.name);
       return `${this.xPos}px ${this.yPos}px`;
     }
   }

@@ -3,7 +3,8 @@
     <v-card 
       class="overflow-hidden"
       style="position: relative;">
-      <NavBar />
+      <NavBar v-if="this.$route.name != `home`"/>
+      <TransparentNavBar v-if="this.$route.name == `home`"/>
       <v-sheet
         id="scrolling-techniques-7"
         class="overflow-y-auto"
@@ -22,6 +23,7 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import TransparentNavBar from '@/components/TransparentNavBar'
 import NavDrawer from '@/components/NavDrawer.vue'
 import Footer from '@/components/Footer'
 
@@ -29,6 +31,7 @@ export default {
   name: 'App',
   components: {
     NavBar,
+    TransparentNavBar,
     Footer,
     NavDrawer
   },
