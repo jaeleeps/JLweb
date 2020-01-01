@@ -7,20 +7,41 @@
           <v-flex xs0 md3></v-flex>
           <v-flex xs12 md6>
             <v-row>
+              <p class="about-para">
+                <span class="subtitle">Contacts</span>
+              </p>
+            </v-row>
+            <v-row>
               <v-layout>
-                <v-flex xs12 md6>
-                  <v-avatar tile size="200">
+                <v-flex xs12 md6 style="text-align: center;">
+                  <v-avatar tile size="250">
                     <img src="@/assets/profile_img_01.png" alt="John" />
                   </v-avatar>
                 </v-flex>
-                <v-flex xs12 md6>
+                <v-flex xs12 md6 style="text-align: left;">
                   <p class="contacts">
-                    <span style="letter-spacing: 4px; font-size: 2rem;">
+                    <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
                       JAEYOUNG
                       <span style="font-weight: 400;">LEE</span>
                     </span>
-                    <span class="font-weight-light">jaeleeps@gmail.com</span>
-                    <span>8210.2309.4277</span>
+                    <span>
+                      <v-btn
+                        color="primary"
+                        depressed
+                        class="ma-1"
+                      >
+                        <span class="font-weight-light"><v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com</span>
+                      </v-btn>
+                    </span>
+                    <span>
+                      <v-btn
+                        color="primary"
+                        depressed
+                        class="ma-1"
+                      >
+                        <span class="font-weight-light"><v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277</span>
+                      </v-btn>
+                    </span>
                   </p>
                 </v-flex>
               </v-layout>
@@ -163,7 +184,8 @@ export default {
   /* font-family: Druk Wide Cy TT Medium; */
   /* font-family: Optima; */
   font-weight: 200;
-  /* font-size: 2rem; */
+  font-size: 1.25rem;
+  letter-spacing: 2px;
   display: block;
 }
 

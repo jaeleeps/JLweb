@@ -5,7 +5,9 @@
     elevate-on-scroll
     scroll-target="#scrolling-techniques-7"
   >
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click.stop="">
+
+    </v-app-bar-nav-icon>
 
     <v-toolbar-title>
       <v-btn
