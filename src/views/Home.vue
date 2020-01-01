@@ -1,40 +1,42 @@
 <template>
   <div id="app" class="back" v-on:mousemove="someMethod">
-    <div id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
+    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
-      <!-- <v-container> -->
+      <v-container>
         <v-layout>
           <v-row>
-            
+            <v-flex xs12 md12 style="text-align: center;">
+              <v-avatar tile size="250">
+                <img src="@/assets/profile_img_01.png" alt="John" />
+              </v-avatar>
+            </v-flex>
           </v-row>
         </v-layout>
-
-      <!-- </v-container> -->
-      <!-- <WindowFooter /> -->
+      </v-container>
     </v-app>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MainCarousel from '@/components/MainCarousel'
-import WindowFooter from '@/components/WindowFooter'
+import MainCarousel from "@/components/MainCarousel";
+import WindowFooter from "@/components/WindowFooter";
 
-window.$ = require('jquery')
-window.JQuery = require('jquery')
+window.$ = require("jquery");
+window.JQuery = require("jquery");
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     MainCarousel,
     WindowFooter
   },
   data: () => ({
     xPos: 0,
-    yPos: 0,
+    yPos: 0
   }),
   methods: {
-    someMethod: function (event) {
+    someMethod: function(event) {
       var x = event.pageX;
       var y = event.pageY;
       // console.log(x, y);
@@ -42,37 +44,50 @@ export default {
       var movementStrength = 25;
       var height = movementStrength / $(window).height();
       var width = movementStrength / $(window).width();
-      
-      var pageX = event.pageX - ($(window).width() / 2);
-      var pageY = event.pageY - ($(window).height() / 2);
+
+      var pageX = event.pageX - $(window).width() / 2;
+      var pageY = event.pageY - $(window).height() / 2;
       this.xPos = width * pageX * -1 - 25;
       this.yPos = height * pageY * -1 - 50;
     },
-    getPos: function (x) {
+    getPos: function(x) {
       // console.log(`${this.xPos}px ${this.yPos}px`)
-      return `${this.xPos}px ${this.yPos}px`
+      return `${this.xPos}px ${this.yPos}px`;
     }
   }
-}
+};
 </script>
 
 <style scoped>
 @import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
 @import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
 #top-image {
-  background:url('https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') -25px -50px;
-  position:fixed ;
-  top:0;
-  width:100%;
-  z-index:0;
-    height:100%;
-    background-size: calc(100% + 50px);
+  background: url("https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") -25px -50px;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+  background-size: calc(100% + 50px);
+}
+
+.black-overlay:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .back {
-  background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d);
+  /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
   /* background-color: #131313; */
-  background-size: cover;
+  /* background-size: cover; */
   /* background-position: center; */
 }
 #inspire {
@@ -87,19 +102,17 @@ export default {
   align-items: center; /* align vertical */
 }
 
-.intro span 
-{
+.intro span {
   /* font-family: Druk Wide Cy TT Medium; */
   font-family: Optima Thin;
   font-size: 4rem;
   display: block;
-  
 }
 
 .outline-font {
-    /* color: #D1D2D4;
+  /* color: #D1D2D4;
     text-shadow: #000 0px 0px 1.5px; */
-    -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .btn-area {
@@ -113,17 +126,12 @@ export default {
   /* width: 33%; */
 }
 
-.link-para span 
-{
+.link-para span {
   /* font-family: Druk Wide Cy TT Medium; */
   display: block;
   margin-bottom: 12px;
 }
 
 .link-para .icon-btn-span {
-
 }
-
-
-
 </style>
