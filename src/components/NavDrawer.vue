@@ -1,6 +1,6 @@
 <template>
     <v-navigation-drawer
-      v-model="drawer"
+      v-model="$store.state.drawer"
       absolute
       temporary
     >
@@ -38,9 +38,9 @@
 <script>
   export default {
     name: 'NavDrawer',
+    // props: ['drawer'],
     data () {
       return {
-        drawer: true,
         items: [
           { title: 'Home', icon: 'dashboard' },
           { title: 'About', icon: 'question_answer' }

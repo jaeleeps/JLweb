@@ -5,7 +5,7 @@
     elevate-on-scroll
     scroll-target="#scrolling-techniques-7"
   >
-    <v-app-bar-nav-icon @click.stop="">
+    <v-app-bar-nav-icon @click.stop="toggleDrawer">
 
     </v-app-bar-nav-icon>
 
@@ -55,5 +55,10 @@
     data: () => ({
       collapseOnScroll: true,
     }),
+    methods: {
+      toggleDrawer() {
+        this.$store.state.drawer = !this.$store.state.drawer;
+      }
+    }
   }
 </script>
