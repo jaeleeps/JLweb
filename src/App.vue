@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app class="grey lighten-4 wrapper">
     <v-card 
       class="overflow-hidden"
       style="position: relative;">
@@ -12,7 +12,7 @@
         style="margin: 0 auto;"
       >
         <v-container fluid style="height: 100vh; width: 100%; padding: 0px; ">
-          <v-spacer style="height:48px;"></v-spacer>
+          <v-spacer v-if="this.$route.name != `home`" style="height:48px;"></v-spacer>
           <router-view />
         </v-container>
       </v-sheet>
@@ -47,5 +47,8 @@ export default {
 </script>
 
 <style scoped>
-
+.wrapper {
+  max-width: 100vw;
+  max-height: 100vh;
+}
 </style>

@@ -2,20 +2,63 @@
   <div id="app" class="back" v-on:mousemove="someMethod">
     <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
-      <v-container >
+      <!-- <v-container fluid>
         <v-layout>
-          <v-row>
+          <v-row align-item="center">
             <v-flex xs12 md12 style="text-align: center;">
-              <v-avatar tile size="250">
-                <img src="@/assets/profile_img_01.png" alt="John" />
-              </v-avatar>
+              
             </v-flex>
           </v-row>
         </v-layout>
-      </v-container>
+      </v-container>-->
+      <div class="center"></div>
     </v-app>
   </div>
 </template>
+
+<style scoped>
+.center {
+  background-color: white;
+
+}
+
+@import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
+@import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
+#top-image {
+  background: url("https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") -25px -50px;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+  background-size: calc(100% + 50px);
+}
+
+.black-overlay:before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.back {
+  /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
+  /* background-color: #131313; */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+#inspire {
+  /* background-color: #D1D2D4; */
+  background: none;
+}
+</style>
+
 
 <script>
 // @ is an alias to /src
@@ -58,81 +101,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-@import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
-@import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
-#top-image {
-  background: url("https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") -25px -50px;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-  height: 100%;
-  background-size: calc(100% + 50px);
-}
-
-.black-overlay:before {
-  position: absolute;
-  content: " ";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.back {
-  /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
-  /* background-color: #131313; */
-  /* background-size: cover; */
-  /* background-position: center; */
-}
-#inspire {
-  /* background-color: #D1D2D4; */
-  background: none;
-}
-
-.main-text {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end; /* align horizontal */
-  align-items: center; /* align vertical */
-}
-
-.intro span {
-  /* font-family: Druk Wide Cy TT Medium; */
-  font-family: Optima Thin;
-  font-size: 4rem;
-  display: block;
-}
-
-.outline-font {
-  /* color: #D1D2D4;
-    text-shadow: #000 0px 0px 1.5px; */
-  -webkit-font-smoothing: antialiased;
-}
-
-.btn-area {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start; /* align horizontal */
-  align-items: center; /* align vertical */
-}
-
-.link-para {
-  /* width: 33%; */
-}
-
-.link-para span {
-  /* font-family: Druk Wide Cy TT Medium; */
-  display: block;
-  margin-bottom: 12px;
-}
-
-.link-para .icon-btn-span {
-}
-</style>
