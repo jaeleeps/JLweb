@@ -1,10 +1,17 @@
 <template>
   <v-app class="grey lighten-4">
-    <NavBar />
-
-    <router-view />
-    
-    <Footer />
+    <v-card class="overflow-hidden">
+      <NavBar />
+      <v-sheet
+        id="scrolling-techniques-7"
+        class="overflow-y-auto"
+        max-height="100vh"
+      >
+        <v-container style="height: 100vh;">
+          <router-view />
+        </v-container>
+      </v-sheet>
+    </v-card>
   </v-app>
 </template>
 

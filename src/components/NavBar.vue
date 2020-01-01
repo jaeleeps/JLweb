@@ -1,61 +1,57 @@
 <template>
-    <v-app-bar
-      app
-      class="elevation-0"
-      color="transparent"
-    >
+  <v-app-bar
+    absolute
+    color="white"
+    elevate-on-scroll
+    scroll-target="#scrolling-techniques-7"
+  >
+    <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>
-        <v-btn
-          href="/"
-          target = "_self"
-          text
-        >
-          <span class="font-weight-light">Jaeyoung</span>
-          <span>Lee</span>
-        </v-btn>
-      </v-toolbar-title>
+    <v-toolbar-title>
+      <v-btn
+        href="/"
+        target = "_self"
+        text
+      >
+        <span class="font-weight-light">Jaeyoung</span>
+        <span>Lee</span>
+      </v-btn>
+    </v-toolbar-title>
 
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
 
+    <div class="d-none d-lg-block">
       <v-btn
         href="/about"
         target = "_self"
-        text
-      >
+        text>
+        <!-- <v-icon>mdi-magnify</v-icon> -->
         <span class="mr-2">about</span>
       </v-btn>
-
+      
       <v-btn
         href="/projects"
         target = "_self"
-        text
-      >
+        text>
+        <!-- <v-icon>mdi-heart</v-icon> -->
         <span class="mr-2">projects</span>
       </v-btn>
 
       <v-btn
         href="/about"
         target = "_self"
-        text
-      >
-        <span class="mr-2">design</span>
+        text>
+        <!-- <v-icon>mdi-dots-vertical</v-icon> -->
+        <span class="mr-2">Design</span>
       </v-btn>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-app-bar>
+    </div>
+  </v-app-bar>
 </template>
 
 <script>
-export default {
-  data() {
-
+  export default {
+    data: () => ({
+      collapseOnScroll: true,
+    }),
   }
-}
 </script>
