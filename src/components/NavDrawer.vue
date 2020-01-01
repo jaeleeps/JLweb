@@ -6,11 +6,14 @@
     >
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <img src="@/assets/profile_img_01.png" alt="Jaeyoung Lee" />
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>
+            <span class="font-weight-light" style="text-transform: uppercase; letter-spacing: 2px;">Jaeyoung</span>
+            <span style="text-transform: uppercase; letter-spacing: 2px;">Lee</span>
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -22,6 +25,8 @@
           v-for="item in items"
           :key="item.title"
           link
+          :href=item.link
+          target = "_self"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -42,8 +47,10 @@
     data () {
       return {
         items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' }
+          { title: 'Home', icon: 'mdi-home', link: '/' },
+          { title: 'About', icon: 'mdi-information', link: '/about' },
+          { title: 'Projects', icon: 'mdi-view-dashboard', link: '/projects' },
+          { title: 'Design', icon: 'mdi-image', link: '/design' }
         ]
       }
     }
