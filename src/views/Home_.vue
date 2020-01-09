@@ -1,80 +1,35 @@
 // https://www.awwwards.com/websites/portfolio/
-// https://www.youtube.com/watch?v=-2LtZRi6Q0s
 
 <template>
   <div id="app" class="back" v-on:mousemove="someMethod">
-    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}">
-      <div class="container">
-
-        <div class="banner">
-          <div class="app-text">
-            <h1>asdfasdfasdfasd<br>fasdfasdfdasf</h1>
-            <p>asdfasdfasdfasdfasdfasdfasdfasdf</p>
-          </div>
-          <div class="app-picture">
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
+      <!-- <div class="text-wrapper"></div> -->
       <!-- <v-container fluid>
         <v-layout>
-          <v-row align-item="center">
-            <v-flex xs12 md12 style="text-align: center;">
-              
-            </v-flex>
-          </v-row>
         </v-layout>
       </v-container>-->
+      <div class="right-bottom"></div>
     </v-app>
   </div>
 </template>
 
 <style scoped>
-.container {
-  width: 100%;
-  height: 100%;
-  /* background: #42455a; */
-}
-
-.banner {
-  width: 80%;
-  height: 70%;
-  top: 25%;
-  left: 130px;
-  position: absolute;
+.text-wrapper {
   color: #fff;
+  background-color: #fff;
+  position: absolute;
+  height: 100vh;
+  width: 480px;
 }
 
-.app-text {
-  width: 50%;
-  float: left;
-}
-
-.app-text h1 {
-  font-size: 43px;
-  width: 640px;
-  position: relative;
-  margin-left: 40px;
-}
-
-.app-text p {
-  width: 650px;
-  font-size: 15px;
-  margin: 30px 0 30px 40px;
-  line-height: 25px;
-  color: #919191;
-}
-
-.app-picture {
-  width: 50%;
-  float: right;
-}
-
-.app-picture img {
-  width: 100%;
-  margin-top: -20px;
-  padding-left: 50px;
+.right-bottom {
+  background-color: #fff;
+  width:100px;
+  height: 100px;
+  position: absolute;
+  right:2rem;
+  bottom:2rem;
 }
 
 @import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
@@ -87,7 +42,8 @@
   width: 100%;
   z-index: 0;
   height: 100%;
-  background-size: calc(100% + 50px);
+  background-size: calc(100% + 200px);
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 95%); */
 }
 
 .black-overlay:before {

@@ -12,8 +12,13 @@
         style="margin: 0 auto;"
       >
         <v-container fluid style="height: 100vh; width: 100%; padding: 0px; ">
-          <v-spacer v-if="this.$route.name != `home`" style="height:48px;"></v-spacer>
-          <router-view />
+          <!-- <v-spacer v-if="this.$route.name != `home`" style="height:48px;"></v-spacer> -->
+          <transition name="fade" mode="out-in">
+            <router-view />
+          </transition>          
+          <!-- <Home />
+          <About />
+          <Projects /> -->
         </v-container>
       </v-sheet>
     </v-card>
@@ -22,6 +27,10 @@
 </template>
 
 <script>
+import Home from '@/views/Home'
+import About from '@/views/About'
+import Projects from '@/views/Projects'
+
 import NavBar from '@/components/NavBar'
 import TransparentNavBar from '@/components/TransparentNavBar'
 import NavDrawer from '@/components/NavDrawer.vue'
@@ -33,7 +42,8 @@ export default {
     NavBar,
     TransparentNavBar,
     Footer,
-    NavDrawer
+    NavDrawer,
+    Home, About, Projects,
   },
   data: () => ({
     // drawer: null,
@@ -51,4 +61,20 @@ export default {
   /* max-width: 100vw;
   max-height: 100vh; */
 }
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 2s ease;
+}
+
+.fade-leave {}
+
+.fade-leave-active {
+  transition: opacity 2s ease;
+  opacity: 0;
+}
+
 </style>

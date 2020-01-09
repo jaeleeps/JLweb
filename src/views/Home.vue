@@ -1,35 +1,73 @@
 // https://www.awwwards.com/websites/portfolio/
+// https://www.youtube.com/watch?v=-2LtZRi6Q0s
 
 <template>
   <div id="app" class="back" v-on:mousemove="someMethod">
-    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
+    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}">
+      <div class="container">
+
+        <div class="banner">
+          <div class="app-text">
+            <h1>I design, I develope<br>
+            is that it is better than gold</h1>
+            <p>asdfasdfasdfasdfasdfasdfasdfasdfafsdfasdfasdfasd
+              asdfasdfasdfhasdjkhfjksdahkf
+              ajksdhfkjasdhfjkasdhjk
+            </p>
+
+          </div>
+          <div class="quick-links">
+            sdffasdfasd
+          </div>
+        </div>
+      </div>
+    </div>
     <v-app id="inspire">
-      <!-- <div class="text-wrapper"></div> -->
-      <!-- <v-container fluid>
-        <v-layout>
-        </v-layout>
-      </v-container>-->
-      <div class="right-bottom"></div>
     </v-app>
   </div>
 </template>
 
 <style scoped>
-.text-wrapper {
-  color: #fff;
-  background-color: #fff;
-  position: absolute;
-  height: 100vh;
-  width: 480px;
+.container {
+  width: 100%;
+  height: 10vh%;
+  /* background: #42455a; */
 }
 
-.right-bottom {
-  background-color: #fff;
-  width:100px;
-  height: 100px;
+.banner {
+  width: 80%;
+  height: 70%;
+  top: 25%;
+  left: 130px;
   position: absolute;
-  right:2rem;
-  bottom:2rem;
+  color: #fff;
+}
+
+.app-text {
+  width: 50%;
+  float: left;
+}
+
+.app-text h1 {
+  font-size: 43px;
+  width: 640px;
+  position: relative;
+  margin-left: 40px;
+}
+
+.app-text p {
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #919191;
+}
+
+.quick-links {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background: white;
 }
 
 @import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
@@ -41,8 +79,8 @@
   top: 0;
   width: 100%;
   z-index: 0;
-  height: 100%;
-  background-size: calc(100% + 200px);
+  height: 100vh;
+  background-size: calc(100% + 50px);
 }
 
 .black-overlay:before {
