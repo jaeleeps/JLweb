@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-4 wrapper">
+  <!-- <v-app class="grey lighten-4 wrapper">
     <v-card 
       class="overflow-hidden"
       style="position: relative;">
@@ -18,37 +18,73 @@
       </v-sheet>
     </v-card>
     <NavDrawer/>
+  </v-app>-->
+  <v-app>
+    <v-container
+    id="scroll-target" 
+    class="overflow-y-auto"
+    v-scroll:#scroll-target="onScroll">
+      <div class="component-wrapper">
+        <Home />
+      </div>
+      <div class="component-wrapper">
+        <About />
+      </div>
+
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
-import TransparentNavBar from '@/components/TransparentNavBar'
-import NavDrawer from '@/components/NavDrawer.vue'
-import Footer from '@/components/Footer'
+import NavBar from "@/components/NavBar";
+import TransparentNavBar from "@/components/TransparentNavBar";
+import NavDrawer from "@/components/NavDrawer.vue";
+import Footer from "@/components/Footer";
+
+import Home from "@/views/Home";
+import About from "@/views/About";
+import Projects from "@/views/Projects";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     NavBar,
     TransparentNavBar,
     Footer,
-    NavDrawer
+    NavDrawer,
+    Home,
+    About,
+    Projects
   },
   data: () => ({
     // drawer: null,
+    offsetTop: 0
   }),
   methods: {
-    toggleDrawer() {
-      this.$store.state.drawer = !this.$store.state.drawer;
+    onScroll(e) {
+      this.isUserScrolling = window.scrollY > 0;
+      this.offsetTop = e.target.scrollTop
+      console.log(this.offsetTop);
     }
   }
 };
 </script>
 
 <style scoped>
-.wrapper {
-  /* max-width: 100vw;
-  max-height: 100vh; */
+.scroll-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+}
+
+#scroll-target {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.component-wrapper {
+  width: 100vw;
 }
 </style>

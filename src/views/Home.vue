@@ -24,7 +24,7 @@
 }
 
 .right-bottom {
-  background-color: #fff;
+  background-color: red;
   width:100px;
   height: 100px;
   position: absolute;
@@ -41,7 +41,7 @@
   top: 0;
   width: 100%;
   z-index: 0;
-  height: 100%;
+  height: 100vh;
   background-size: calc(100% + 200px);
 }
 
@@ -51,7 +51,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: block;
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.9);
