@@ -9,7 +9,7 @@
         <v-layout>
         </v-layout>
       </v-container>-->
-      <div class="right-bottom"></div>
+      <!-- <div class="right-bottom"></div> -->
     </v-app>
   </div>
 </template>
@@ -36,13 +36,13 @@
 @import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
 #top-image {
   background: url("https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") -25px -50px;
-  background-size: cover;
-  position: fixed;
+  /* background-size: cover; */
+  /* position: fixed; */
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 0;
   height: 100vh;
-  background-size: calc(100% + 200px);
+  background-size: calc(120% + 200px);
 }
 
 .black-overlay:before {
@@ -54,7 +54,7 @@
   height: 100vh;
   display: block;
   z-index: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .back {
@@ -62,6 +62,8 @@
   /* background-color: #131313; */
   /* background-size: cover; */
   /* background-position: center; */
+  max-width: 100vw;
+  max-height: 100vh;
 }
 #inspire {
   /* background-color: #D1D2D4; */

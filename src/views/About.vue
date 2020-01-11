@@ -195,6 +195,8 @@ export default {
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
   background-color: #ffffff;
+  width: 100vw;
+  height: 100%;
   /* background-size: cover; */
   /* background-position: center; */
 }

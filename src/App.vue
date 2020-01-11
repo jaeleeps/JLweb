@@ -20,7 +20,7 @@
     <NavDrawer/>
   </v-app>-->
   <v-app>
-    <v-container
+    <div
     id="scroll-target" 
     class="overflow-y-auto"
     v-scroll:#scroll-target="onScroll">
@@ -30,9 +30,11 @@
       <div class="component-wrapper">
         <About />
       </div>
-
+      <div class="component-wrapper">
+        <Projects />
+      </div>
       </v-row>
-    </v-container>
+    </div>
   </v-app>
 </template>
 
@@ -80,7 +82,7 @@ export default {
 
 #scroll-target {
   width: 100vw;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
