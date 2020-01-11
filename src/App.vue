@@ -8,7 +8,7 @@
       <v-sheet
         id="scrolling-techniques-7"
         class="overflow-y-auto"
-        max-height="100vh"
+        max-height="200vh"
         style="margin: 0 auto;"
       >
         <v-container fluid style="height: 100vh; width: 100%; padding: 0px; ">
