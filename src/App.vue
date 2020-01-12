@@ -20,21 +20,27 @@
     <NavDrawer/>
   </v-app>-->
   <v-app>
-    <div
-    id="scroll-target" 
-    class="overflow-y-auto"
-    v-scroll:#scroll-target="onScroll">
-      <div class="component-wrapper">
+    <v-responsive id="scroll-target" class="overflow-y-auto">
+      <v-card
+        id="home-page"
+        class="component-wrapper"
+        v-scroll:#scroll-target="onScroll"
+        v-intersect="{
+              handler: onIntersect,
+              options: {
+                threshold: [0, 0.5, 1.0]
+              }
+            }"
+      >
         <Home />
-      </div>
-      <div class="component-wrapper">
+      </v-card>
+      <div id="about-page" class="component-wrapper">
         <About />
       </div>
-      <div class="component-wrapper">
+      <div id="projects-page" class="component-wrapper">
         <Projects />
       </div>
-      </v-row>
-    </div>
+    </v-responsive>
   </v-app>
 </template>
 
@@ -60,14 +66,20 @@ export default {
     Projects
   },
   data: () => ({
-    // drawer: null,
-    offsetTop: 0
+    offsetTop: 0,
+    isIntersecting: false
   }),
   methods: {
     onScroll(e) {
       this.isUserScrolling = window.scrollY > 0;
-      this.offsetTop = e.target.scrollTop
+      this.offsetTop = e.target.scrollTop;
       console.log(this.offsetTop);
+    },
+    onIntersect(entries, observer) {
+      // More information about these options
+      // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+      this.isIntersecting = entries[0].intersectionRatio >= 0.5;
+      console.log(this.isIntersecting);
     }
   }
 };
