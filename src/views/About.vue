@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="back">
-    <v-app id="inspire">
-      <!-- <v-container> -->
+    <!-- <v-app id="inspire"> -->
+    <v-container fluid>
       <v-layout>
         <v-row>
           <v-flex xs0 md3></v-flex>
@@ -13,37 +13,33 @@
             </v-row>
             <v-row>
               <v-layout>
-                <v-flex xs12 md6 style="text-align: center;">
+                <v-col col12 md6 style="text-align: center;">
                   <v-avatar tile size="250">
                     <img src="@/assets/profile_img_01.png" alt="John" />
                   </v-avatar>
-                </v-flex>
-                <v-flex xs12 md6 style="text-align: left;">
+                </v-col>
+                <v-col xs12 md6 style="text-align: left;">
                   <p class="contacts">
                     <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
                       JAEYOUNG
                       <span style="font-weight: 400;">LEE</span>
                     </span>
                     <span>
-                      <v-btn
-                        color="primary"
-                        depressed
-                        class="ma-1"
-                      >
-                        <span class="font-weight-light"><v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com</span>
+                      <v-btn color="primary" depressed class="ma-1">
+                        <span class="font-weight-light">
+                          <v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com
+                        </span>
                       </v-btn>
                     </span>
                     <span>
-                      <v-btn
-                        color="primary"
-                        depressed
-                        class="ma-1"
-                      >
-                        <span class="font-weight-light"><v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277</span>
+                      <v-btn color="primary" depressed class="ma-1">
+                        <span class="font-weight-light">
+                          <v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277
+                        </span>
                       </v-btn>
                     </span>
                   </p>
-                </v-flex>
+                </v-col>
               </v-layout>
             </v-row>
             <v-row>
@@ -63,7 +59,7 @@
                         </template>
                         <v-card class="elevation-2">
                           <v-card-title class="title" v-text="item.title" />
-                          <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle"/>
+                          <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle" />
                           <v-card-text
                             style="padding-top: 0px; padding-bottom: 8px;"
                             v-for="text in item.info"
@@ -85,20 +81,20 @@
                   </p>
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Programming Lang & Tool</span>
-                    <SkillsCard skill_type="programming" style="margin:1rem;"/>
+                  <span class="subsubtitle ma-5">Programming Lang & Tool</span>
+                  <SkillsCard skill_type="programming" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Design & Modeling</span>
-                    <SkillsCard skill_type="design" style="margin:1rem;" />
+                  <span class="subsubtitle ma-5">Design & Modeling</span>
+                  <SkillsCard skill_type="design" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">Language</span>
-                    <SkillsCard skill_type="language" style="margin:1rem;" />
+                  <span class="subsubtitle ma-5">Language</span>
+                  <SkillsCard skill_type="language" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                    <span class="subsubtitle ma-5">ETC</span>
-                    <SkillsCard skill_type="etc" style="margin:1rem;" />
+                  <span class="subsubtitle ma-5">ETC</span>
+                  <SkillsCard skill_type="etc" style="margin:1rem;" />
                 </v-flex>
               </v-layout>
             </v-row>
@@ -106,12 +102,13 @@
           <v-flex xs0 md3></v-flex>
         </v-row>
       </v-layout>
-    </v-app>
+    </v-container>
+    <!-- </v-app> -->
   </div>
 </template>
 
 <script>
-import SkillsCard from '@/components/About/SkillsCard'
+import SkillsCard from "@/components/About/SkillsCard";
 import DesignSkillsCard from "@/components/About/DesignSkillsCard";
 import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
 
@@ -122,16 +119,13 @@ export default {
     SkillsCard
   },
   data: () => ({
-    skill_type : "",
+    skill_type: "",
     academics_data: [
       {
         year: "2014~2017",
         title: "Hankuk Academy of Foreign Studides",
         subtitle: "International Div. Class of 2017",
-        info: [
-          " Major in Chinese Language",
-          "GPA: 3.88/4.0"
-        ]
+        info: [" Major in Chinese Language", "GPA: 3.88/4.0"]
       },
       {
         year: "2017~",
@@ -148,7 +142,7 @@ export default {
         title: "Naver D2 - Campus Q",
         subtitle: "Node.js Developer",
         info: [
-          "CampusQ was a chatbot-integrated education platform developing start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app).",
+          "CampusQ was a chatbot-integrated education platform developing start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
         ]
       }
     ]
@@ -175,6 +169,9 @@ export default {
 
 .subsubtitle {
   font-size: 1.3rem;
+  @media $display-breakpoints.xs-only {
+    font-size: 5px;
+  }
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;

@@ -1,7 +1,7 @@
 // https://www.awwwards.com/websites/portfolio/
 
 <template>
-  <div id="app" class="back" v-on:mousemove="someMethod">
+  <div class="back" v-on:mousemove="someMethod">
     <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
       <!-- <div class="text-wrapper"></div> -->
@@ -34,15 +34,17 @@
 
 @import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);
 @import url(//db.onlinewebfonts.com/c/b41aa5b33e88bbfbbba326f4ccd4ef3f?family=Optima-Thin);
-#top-image {
+/* #top-image {
   background: url("https://images.unsplash.com/photo-1542831371-32f555c86880?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") -25px -50px;
-  /* background-size: cover; */
-  /* position: fixed; */
   top: 0;
   width: 100vw;
   z-index: 0;
   height: 100vh;
-  background-size: calc(120% + 200px);
+  background-size: calc(100vh + 200px);
+} */
+
+#top-image {
+  
 }
 
 .black-overlay:before {

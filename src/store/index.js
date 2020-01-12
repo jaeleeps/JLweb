@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     drawer: false,
-    // isIntersecting: false,
+    isIntersectingHome: false,
+    isIntersectingAbout: false,
+    isIntersectingProjects: false,
   },
   mutations: {
   },

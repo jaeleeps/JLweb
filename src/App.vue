@@ -19,28 +19,47 @@
     </v-card>
     <NavDrawer/>
   </v-app>-->
-  <v-app>
-    <v-responsive id="scroll-target" class="overflow-y-auto">
-      <v-card
+  <v-app overflow-hidden>
+    <NavBar />
+    <NavDrawer />
+    <div id="scroll-target" class="overflow-y-auto" v-scroll:#scroll-target="onScroll">
+      <div
         id="home-page"
         class="component-wrapper"
-        v-scroll:#scroll-target="onScroll"
         v-intersect="{
-              handler: onIntersect,
-              options: {
-                threshold: [0, 0.5, 1.0]
-              }
-            }"
+          handler: onIntersectHome,
+          options: {
+            threshold: [0, 0.001, 0.5, 0.999, 1.0]
+          }
+        }"
       >
         <Home />
-      </v-card>
-      <div id="about-page" class="component-wrapper">
-        <About />
       </div>
-      <div id="projects-page" class="component-wrapper">
+      <div
+        id="about-page"
+        class="component-wrapper"
+        v-intersect="{
+          handler: onIntersectAbout,
+          options: {
+            threshold: [0, 0.001, 0.5, 0.999, 1.0]
+          }
+        }"
+      >
+        <About />
+      </div>  
+      <div
+        id="projects-page"
+        class="component-wrapper"
+        v-intersect="{
+            handler: onIntersectProjects,
+            options: {
+              threshold: [0, 0.001, 0.5, 0.999, 1.0]
+            }
+        }"
+      >
         <Projects />
       </div>
-    </v-responsive>
+    </div>
   </v-app>
 </template>
 
@@ -66,8 +85,7 @@ export default {
     Projects
   },
   data: () => ({
-    offsetTop: 0,
-    isIntersecting: false
+    offsetTop: 0
   }),
   methods: {
     onScroll(e) {
@@ -75,11 +93,36 @@ export default {
       this.offsetTop = e.target.scrollTop;
       console.log(this.offsetTop);
     },
-    onIntersect(entries, observer) {
-      // More information about these options
-      // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-      this.isIntersecting = entries[0].intersectionRatio >= 0.5;
-      console.log(this.isIntersecting);
+    onIntersectHome(entries, observer) {
+      this.$store.state.isIntersectingHome =
+        (entries[0].isIntersecting && (entries[0].intersectionRatio > 0.01)) ;
+      console.log(
+        this.$store.state.isIntersectingHome,
+        entries[0].intersectionRatio,
+        this.$store.state.isIntersectingAbout,
+        this.$store.state.isIntersectingProjects
+      );
+    },
+    onIntersectAbout(entries, observer) {
+      this.$store.state.isIntersectingAbout =
+        (entries[0].isIntersecting && (entries[0].intersectionRatio > 0.01));
+      console.log(
+        this.$store.state.isIntersectingHome,
+        this.$store.state.isIntersectingAbout,
+        entries[0].intersectionRatio,
+        this.$store.state.isIntersectingProjects
+      );
+    },
+    onIntersectProjects(entries, observer) {
+      this.$store.state.isIntersectingProjects =
+        (entries[0].isIntersecting && (entries[0].intersectionRatio > 0.01));
+      console.log(
+        // entries[0],
+        this.$store.state.isIntersectingHome,
+        this.$store.state.isIntersectingAbout,
+        this.$store.state.isIntersectingProjects,
+        entries[0].intersectionRatio
+      );
     }
   }
 };
