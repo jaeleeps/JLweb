@@ -25,6 +25,7 @@
           v-for="item in items"
           :key="item.title"
           link
+          ripple
           :href=item.link
           target = "_self"
         >
@@ -33,7 +34,10 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>
+              <span>{{ item.title }}</span>
+              <!-- <span v-if="item.isActive"> you are here!!</span> -->
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -47,10 +51,10 @@
     data () {
       return {
         items: [
-          { title: 'Home', icon: 'mdi-home', link: '#hope-page' },
-          { title: 'About', icon: 'mdi-information', link: '#about-page' },
-          { title: 'Projects', icon: 'mdi-view-dashboard', link: 'projects-page' },
-          { title: 'Design', icon: 'mdi-image', link: '/design' }
+          { title: 'Home', icon: 'mdi-home', link: '#home-page', isActive: false },
+          { title: 'About', icon: 'mdi-information', link: '#about-page', isActive: this.$store.state.isIntersectingAbout },
+          { title: 'Projects', icon: 'mdi-view-dashboard', link: '#projects-page', isActive: this.$store.state.isIntersectingProjects },
+          { title: 'Design', icon: 'mdi-image', link: '#about-page', isActive: false }
         ]
       }
     }

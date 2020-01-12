@@ -25,7 +25,7 @@
           v-intersect="{
           handler: onIntersectAbout,
           options: {
-            threshold: [0, 0.001, 0.5, 0.999, 1.0]
+            threshold: [0, 0.0000000001, 0.001, 0.5, 0.999, 0.99999999999, 1.0]
           }
         }"
         >
