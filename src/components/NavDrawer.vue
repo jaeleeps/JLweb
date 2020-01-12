@@ -47,9 +47,9 @@
     data () {
       return {
         items: [
-          { title: 'Home', icon: 'mdi-home', link: '/' },
-          { title: 'About', icon: 'mdi-information', link: '/about' },
-          { title: 'Projects', icon: 'mdi-view-dashboard', link: '/projects' },
+          { title: 'Home', icon: 'mdi-home', link: '#hope-page' },
+          { title: 'About', icon: 'mdi-information', link: '#about-page' },
+          { title: 'Projects', icon: 'mdi-view-dashboard', link: 'projects-page' },
           { title: 'Design', icon: 'mdi-image', link: '/design' }
         ]
       }

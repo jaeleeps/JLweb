@@ -48,7 +48,7 @@
 }
 
 .black-overlay:before {
-  position: absolute;
+  /* position: absolute; */
   content: " ";
   top: 0;
   left: 0;
