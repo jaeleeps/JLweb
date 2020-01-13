@@ -4,12 +4,13 @@
   <div class="back" v-on:mousemove="someMethod">
     <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
     <v-app id="inspire">
-      <!-- <div class="text-wrapper"></div> -->
-      <!-- <v-container fluid>
+      <v-container fluid>
         <v-layout>
+          <v-row>
+            <span>Jaeyoung Lee</span>
+          </v-row>
         </v-layout>
-      </v-container>-->
-      <!-- <div class="right-bottom"></div> -->
+      </v-container>
     </v-app>
   </div>
 </template>
@@ -21,15 +22,6 @@
   position: absolute;
   height: 100vh;
   width: 480px;
-}
-
-.right-bottom {
-  background-color: red;
-  width:100px;
-  height: 100px;
-  position: absolute;
-  right:2rem;
-  bottom:2rem;
 }
 
 @import url(//db.onlinewebfonts.com/c/0f0decca41e57850880853f5b0749821?family=Druk+Wide+Cy+TT+Medium);

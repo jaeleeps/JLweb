@@ -4,16 +4,15 @@
     <v-container fluid>
       <v-layout>
         <v-row>
-          <v-flex xs0 md3></v-flex>
-          <v-flex xs12 md6>
+          <!-- <v-flex xs1 md3></v-flex> -->
+          <v-flex xs12 md12>
             <v-row>
               <p class="about-para">
                 <span class="subtitle">Contacts</span>
               </p>
             </v-row>
             <v-row>
-              <v-layout>
-                <v-col col12 md6 style="text-align: center;">
+                <v-col xs12 md6 style="text-align: center;">
                   <v-avatar tile size="250">
                     <img src="@/assets/profile_img_01.png" alt="John" />
                   </v-avatar>
@@ -40,7 +39,6 @@
                     </span>
                   </p>
                 </v-col>
-              </v-layout>
             </v-row>
             <v-row>
               <v-flex xs12 md12>
@@ -99,7 +97,7 @@
               </v-layout>
             </v-row>
           </v-flex>
-          <v-flex xs0 md3></v-flex>
+          <!-- <v-flex xs1 md3></v-flex> -->
         </v-row>
       </v-layout>
     </v-container>
@@ -192,7 +190,7 @@ export default {
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
   background-color: #ffffff;
-  width: 100vw;
+  max-width: 100vh;
   height: 100%;
   /* background-size: cover; */
   /* background-position: center; */

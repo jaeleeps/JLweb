@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-card>
       <NavBar />
       <v-sheet 
@@ -123,5 +123,10 @@ export default {
 
 .component-wrapper {
   width: 100vw;
+}
+
+#app {
+    /* overflow-x: hidden; */
+    width: 100%;
 }
 </style>
