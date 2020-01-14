@@ -1,71 +1,76 @@
 <template>
   <div id="app" class="back">
-    <v-content>
-      <v-container fill-height>
-        <v-layout justify-center align-center>
-          <v-flex shrink xs11 md8>
+    <!-- <v-app id="inspire"> -->
+    <v-container fluid>
+      <v-layout>
+        <v-row>
+          <!-- <v-flex xs1 md3></v-flex> -->
+          <v-flex xs12 md12>
             <v-row>
-              <span class="subtitle">Contacts</span>
+              <p class="about-para">
+                <span class="subtitle">Contacts</span>
+              </p>
             </v-row>
-
             <v-row>
-              <v-col xs12 md6 style="text-align: center;">
-                <v-avatar tile size="250">
-                  <img src="@/assets/profile_img_01.png" alt="John" />
-                </v-avatar>
-              </v-col>
-              <v-col xs12 md6 style="text-align: left;">
-                <p class="contacts">
-                  <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
-                    JAEYOUNG
-                    <span style="font-weight: 400;">LEE</span>
-                  </span>
+                <v-col xs12 md6 style="text-align: center;">
+                  <v-avatar tile size="250">
+                    <img src="@/assets/profile_img_01.png" alt="John" />
+                  </v-avatar>
+                </v-col>
+                <v-col xs12 md6 style="text-align: left;">
+                  <p class="contacts">
+                    <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
+                      JAEYOUNG
+                      <span style="font-weight: 400;">LEE</span>
+                    </span>
+                    <span>
+                      <v-btn color="primary" depressed class="ma-1">
+                        <span class="font-weight-light">
+                          <v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com
+                        </span>
+                      </v-btn>
+                    </span>
+                    <span>
+                      <v-btn color="primary" depressed class="ma-1">
+                        <span class="font-weight-light">
+                          <v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277
+                        </span>
+                      </v-btn>
+                    </span>
+                  </p>
+                </v-col>
+            </v-row>
+            <v-row>
+              <v-flex xs12 md12>
+                <p class="about-para">
+                  <span class="subtitle">Academics & Work Experiences</span>
                   <span>
-                    <v-btn color="primary" depressed class="ma-1">
-                      <span class="font-weight-light">
-                        <v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com
-                      </span>
-                    </v-btn>
-                  </span>
-                  <span>
-                    <v-btn color="primary" depressed class="ma-1">
-                      <span class="font-weight-light">
-                        <v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277
-                      </span>
-                    </v-btn>
+                    <v-timeline>
+                      <v-timeline-item
+                        v-for="(item, i) in academics_data"
+                        :key="i"
+                        color="grey lighten-2"
+                        small
+                      >
+                        <template v-slot:opposite>
+                          <span v-text="item.year"></span>
+                        </template>
+                        <v-card class="elevation-2">
+                          <v-card-title class="title" v-text="item.title" />
+                          <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle" />
+                          <v-card-text
+                            style="padding-top: 0px; padding-bottom: 8px;"
+                            v-for="text in item.info"
+                            :key="text.length"
+                            v-text="text"
+                          />
+                        </v-card>
+                      </v-timeline-item>
+                    </v-timeline>
                   </span>
                 </p>
-              </v-col>
+              </v-flex>
             </v-row>
-
-            <v-row>
-              <span class="subtitle">Academics & Work Experiences</span>
-              <div style="margin-right:2rem;">
-                <v-timeline :dense="$vuetify.breakpoint.xsOnly">
-                  <v-timeline-item
-                    v-for="(item, i) in academics_data"
-                    :key="i"
-                    color="grey lighten-2"
-                    small
-                  >
-                    <template v-slot:opposite>
-                      <span v-text="item.year"></span>
-                    </template>
-                    <v-card class="elevation-2">
-                      <v-card-title class="title" v-text="item.title" />
-                      <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle" />
-                      <v-card-text
-                        style="padding-top: 0px; padding-bottom: 8px;"
-                        v-for="text in item.info"
-                        :key="text.length"
-                        v-text="text"
-                      />
-                    </v-card>
-                  </v-timeline-item>
-                </v-timeline>
-              </div>
-            </v-row>
-
             <v-row>
               <v-layout flex-wrap>
                 <v-flex xs12 md12>
@@ -74,7 +79,7 @@
                   </p>
                 </v-flex>
                 <v-flex xs12 md6>
-                  <span class="subsubtitle ma-5">Programming</span>
+                  <span class="subsubtitle ma-5">Programming Lang & Tool</span>
                   <SkillsCard skill_type="programming" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
@@ -91,11 +96,12 @@
                 </v-flex>
               </v-layout>
             </v-row>
-
           </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
+          <!-- <v-flex xs1 md3></v-flex> -->
+        </v-row>
+      </v-layout>
+    </v-container>
+    <!-- </v-app> -->
   </div>
 </template>
 
@@ -143,8 +149,16 @@ export default {
 </script>
 
 <style scoped>
-.subtitle {
-  font-size: 1.75rem;
+.about-para {
+  margin-top: 3rem;
+}
+
+.about-para > span {
+  display: block;
+}
+
+.about-para > .subtitle {
+  font-size: 2rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -153,13 +167,12 @@ export default {
 
 .subsubtitle {
   font-size: 1.3rem;
-  /* @media $display-breakpoints.xs-only {
+  @media $display-breakpoints.xs-only {
     font-size: 5px;
-  } */
+  }
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-left: 20rem;
 }
 
 .contacts > span {
@@ -177,7 +190,7 @@ export default {
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
   background-color: #ffffff;
-  /* max-width: 100vh; */
+  max-width: 100vh;
   height: 100%;
   /* background-size: cover; */
   /* background-position: center; */

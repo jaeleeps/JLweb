@@ -5,9 +5,10 @@
       <v-sheet 
         id="scrolling-techniques-7"
         class="overflow-y-auto"
+        max-width="100vw"
         height="100vh"
         >
-        <div
+        <!-- <div
           id="home-page"
           class="component-wrapper"
           v-intersect="{
@@ -18,7 +19,7 @@
         }"
         >
           <Home />
-        </div>
+        </div> -->
         <div
           id="about-page"
           class="component-wrapper"
