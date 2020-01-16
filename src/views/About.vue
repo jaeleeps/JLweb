@@ -37,7 +37,6 @@
                       </v-avatar>8210-2309-4277
                     </v-chip>                    
                   </span>
-
                   <!-- <span>
                     <v-btn color="primary" depressed class="ma-1">
                       <span class="font-weight-light">
