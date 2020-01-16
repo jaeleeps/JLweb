@@ -56,8 +56,8 @@ export default {
 
 <style scoped>
 .active-btn {
-  font-size: 1.00005rem;
-  font-style: bold;
+  /* font-size: 1.00005rem; */
+  /* font-style: bold; */
   color: #212121;
 }
 

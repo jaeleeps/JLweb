@@ -9,18 +9,36 @@
             </v-row>
 
             <v-row>
+              <span class="subtitle">About & Contacts</span>
+            </v-row>
+
+            <v-row>
               <v-col xs12 md6 style="text-align: center;">
                 <v-avatar tile size="250">
                   <img src="@/assets/profile_img_01.png" alt="John" />
                 </v-avatar>
               </v-col>
-              <v-col xs12 md6 style="text-align: left;">
+              <v-col xs12 md6 style="text-align: center;">
                 <p class="contacts">
                   <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
                     JAEYOUNG
                     <span style="font-weight: 400;">LEE</span>
                   </span>
+
                   <span>
+                    <v-chip class="ma-1" color="grey lighten-1" text-color="white">
+                      <v-avatar>
+                        <v-icon small>mdi-email</v-icon>
+                      </v-avatar>jaeleeps@gmail.com
+                    </v-chip>
+                    <v-chip class="ma-1" color="grey lighten-1" text-color="white">
+                      <v-avatar>
+                        <v-icon small>mdi-cellphone-android</v-icon>
+                      </v-avatar>8210-2309-4277
+                    </v-chip>                    
+                  </span>
+
+                  <!-- <span>
                     <v-btn color="primary" depressed class="ma-1">
                       <span class="font-weight-light">
                         <v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com
@@ -33,6 +51,19 @@
                         <v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277
                       </span>
                     </v-btn>
+                  </span> -->
+
+                  <span style="margin-top: 0.5rem;">
+                    <span class="ma-1" v-for="(contact, i) in contacts_btn" :key="i">
+                      <v-tooltip bottom>
+                        <template v-slot:activator="{ on }">
+                          <v-btn v-on="on" fab dark small :color="contact.contact_color">
+                            <v-icon>{{contact.contact_icon}}</v-icon>
+                          </v-btn>
+                        </template>
+                        <span>{{contact.contact_txt}}</span>
+                      </v-tooltip>
+                    </span>
                   </span>
                 </p>
               </v-col>
@@ -91,7 +122,6 @@
                 </v-flex>
               </v-layout>
             </v-row>
-
           </v-flex>
         </v-layout>
       </v-container>
@@ -112,6 +142,23 @@ export default {
   },
   data: () => ({
     skill_type: "",
+    contacts_btn: [
+      {
+        contact_icon: "mdi-linkedin",
+        contact_color: "#2867B2",
+        contact_txt: "Link in LinkedIn"
+      },
+      {
+        contact_icon: "mdi-github-circle",
+        contact_color: "#333",
+        contact_txt: "Link in Github"
+      },
+      {
+        contact_icon: "mdi-npm-variant-outline",
+        contact_color: "#cc3534",
+        contact_txt: "Link in NPM"
+      }
+    ],
     academics_data: [
       {
         year: "2014~2017",
@@ -169,6 +216,7 @@ export default {
   font-size: 1.25rem;
   letter-spacing: 2px;
   display: block;
+  width: 100%;
 }
 
 .academics {
