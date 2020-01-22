@@ -1,35 +1,39 @@
 <template>
   <div class="nav-btn-wrapper">
     <span>
-      <v-btn color="secondary" fab :dark="true"
+      <v-btn color="#b39377" fab :dark="true"
         :x-small="!this.$store.state.isIntersectingHome" :small="this.$store.state.isIntersectingHome"
-        @click="handleBtnClick"
+        :color="this.$store.state.isIntersectingHome ? `#cfb997` : `#e0d0b9`"
+        href="#home-page"
       >
-        <!-- <v-icon>mdi-television</v-icon> -->
+        <v-icon>mdi-home</v-icon>
       </v-btn>
     </span>
     <span>
-      <v-btn color="secondary" fab :dark="true"
+      <v-btn color="#b39377" fab :dark="true"
         :x-small="!this.$store.state.isIntersectingAbout" :small="this.$store.state.isIntersectingAbout"
-        @click="handleBtnClick"
+        :color="this.$store.state.isIntersectingAbout ? `#cfb997` : `#e0d0b9`"
+        href="#about-page"
       >
-        <!-- <v-icon>mdi-television</v-icon> -->
+        <v-icon>mdi-information</v-icon>
       </v-btn>
     </span>
     <span>
-      <v-btn color="secondary" fab :dark="true"
+      <v-btn color="#b39377" fab :dark="true"
         :x-small="!this.$store.state.isIntersectingProjects" :small="this.$store.state.isIntersectingProjects"
-        @click="handleBtnClick"
+        :color="this.$store.state.isIntersectingProjects ? `#cfb997` : `#e0d0b9`"
+        href="#projects-page"
       >
-        <!-- <v-icon>mdi-television</v-icon> -->
+        <v-icon>mdi-view-dashboard</v-icon>
       </v-btn>
     </span>
     <span>
-      <v-btn color="secondary" fab :dark="true"
+      <v-btn color="#b39377" fab :dark="true"
         :x-small="!this.$store.state.isIntersectingDesign" :small="this.$store.state.isIntersectingDesign"
-        @click="handleBtnClick"
+        :color="this.$store.state.isIntersectingDesign ? `#cfb997` : `#e0d0b9`"
+        href="#design-page"
       >
-        <!-- <v-icon>mdi-television</v-icon> -->
+        <v-icon>mdi-image</v-icon>
       </v-btn>
     </span>
   </div>
