@@ -2,6 +2,7 @@
   <v-app-bar absolute color="white" elevate-on-scroll scroll-target="#scrolling-techniques-7">
     <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
+
     <v-toolbar-title>
       <v-btn text href="#home-page" target="_self">
         <span class="font-weight-light">Jaeyoung</span>
@@ -23,8 +24,7 @@
         <span
           class="mr-2"
           :class="`${this.$store.state.isIntersectingAbout ? 'active-btn' : 'deactive-btn'}`"
-        >
-        about</span>
+        >about</span>
         <!-- <span v-if="this.$store.state.isIntersectingAbout">asdf</span> -->
       </v-btn>
 

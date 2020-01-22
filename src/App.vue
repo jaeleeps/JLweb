@@ -2,13 +2,8 @@
   <v-app id="app">
     <v-card>
       <NavBar />
-      <v-sheet 
-        id="scrolling-techniques-7"
-        class="overflow-y-auto"
-        max-width="100vw"
-        height="100vh"
-        >
-        <!-- <div
+      <v-sheet id="scrolling-techniques-7" class="overflow-y-auto" max-width="100vw" height="100vh">
+        <div
           id="home-page"
           class="component-wrapper"
           v-intersect="{
@@ -19,7 +14,7 @@
         }"
         >
           <Home />
-        </div> -->
+        </div>
         <div
           id="about-page"
           class="component-wrapper"
@@ -44,9 +39,22 @@
         >
           <Projects />
         </div>
+        <div
+          id="design-page"
+          class="component-wrapper"
+          v-intersect="{
+            handler: onIntersectDesign,
+            options: {
+              threshold: [0, 0.001, 0.5, 0.999, 1.0]
+            }
+        }"
+        >
+          <Design />
+        </div>
       </v-sheet>
     </v-card>
     <NavDrawer />
+    <NavButton />
   </v-app>
 </template>
 
@@ -55,21 +63,24 @@ import NavBar from "@/components/NavBar";
 import TransparentNavBar from "@/components/TransparentNavBar";
 import NavDrawer from "@/components/NavDrawer.vue";
 import Footer from "@/components/Footer";
+import NavButton from "@/components/NavButton";
 
 import Home from "@/views/Home";
 import About from "@/views/About";
 import Projects from "@/views/Projects";
+import Design from "@/views/Design";
 
 export default {
   name: "App",
   components: {
     NavBar,
     TransparentNavBar,
-    Footer,
+    NavButton,
     NavDrawer,
     Home,
     About,
-    Projects
+    Projects,
+    Design
   },
   data: () => ({
     offsetTop: 0
@@ -82,7 +93,7 @@ export default {
     },
     onIntersectHome(entries, observer) {
       this.$store.state.isIntersectingHome =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.01;
+        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
       // console.log(
       //   this.$store.state.isIntersectingHome,
       //   entries[0].intersectionRatio,
@@ -92,7 +103,7 @@ export default {
     },
     onIntersectAbout(entries, observer) {
       this.$store.state.isIntersectingAbout =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.01;
+        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
       // console.log(
       //   this.$store.state.isIntersectingHome,
       //   this.$store.state.isIntersectingAbout,
@@ -102,7 +113,7 @@ export default {
     },
     onIntersectProjects(entries, observer) {
       this.$store.state.isIntersectingProjects =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.01;
+        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
       // console.log(
       //   // entries[0],
       //   this.$store.state.isIntersectingHome,
@@ -110,6 +121,10 @@ export default {
       //   this.$store.state.isIntersectingProjects,
       //   entries[0].intersectionRatio
       // );
+    },
+    onIntersectDesign(entries, observer) {
+      this.$store.state.isIntersectingDesign =
+        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
     }
   }
 };
@@ -127,7 +142,7 @@ export default {
 }
 
 #app {
-    /* overflow-x: hidden; */
-    width: 100%;
+  /* overflow-x: hidden; */
+  width: 100%;
 }
 </style>

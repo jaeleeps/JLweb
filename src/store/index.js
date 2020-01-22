@@ -9,6 +9,7 @@ export default new Vuex.Store({
     isIntersectingHome: false,
     isIntersectingAbout: false,
     isIntersectingProjects: false,
+    isIntersectingDesign: false,
   },
   mutations: {
   },
