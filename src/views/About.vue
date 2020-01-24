@@ -2,7 +2,7 @@
   <div id="app" class="back">
     <v-content>
       <v-container fill-height>
-        <v-layout justify-center align-center>
+        <v-layout justify-center align-center pb-10>
           <v-flex shrink xs11 md10>
             <v-row>
               <span class="cat_title">About</span>
@@ -55,42 +55,82 @@
             </v-row>
 
             <v-row>
-              <v-btn @click="handleShowExp()" text>Experiences</v-btn>
-              <v-btn @click="handleShowSkills()" text>Skills</v-btn>
+              <v-btn
+                @click="handleShowExp()"
+                :color="this.show_exp ? `grey lighten-1` : `grey darken-4`"
+                text
+              >Experiences</v-btn>
+              <v-btn
+                @click="handleShowSkills()"
+                :color="this.show_skills ? `grey lighten-1` : `grey darken-4`"
+                text
+              >Skills</v-btn>
             </v-row>
 
-            <v-row v-show="show_exp">
-              <span class="cat_subtitle">Academics & Work Experiences</span>
-              <div style="margin-right:2rem;">
-                <AboutTimeline />
-              </div>
-            </v-row>
+            <transition name="fade">
+              <v-row v-show="show_exp">
+                <span class="cat_subtitle">Academics & Work Experiences</span>
+                <div style="margin-right:2rem;">
+                  <AboutTimeline />
+                  <v-sheet style="text-align:center; margin-top:3rem;">
+                    <v-btn
+                      class="ma-5"
+                      fab
+                      outlined
+                      @click="handleShowExp()"
+                      text
+                      color="grey darken-1"
+                    >
+                      <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                    <v-btn class="ma-5" fab outlined @click="handleShowSkills()" text>skiils</v-btn>
+                  </v-sheet>
+                </div>
+              </v-row>
+            </transition>
 
-            <v-row v-show="show_skills">
-              <v-layout flex-wrap>
-                <v-flex xs12 md12>
-                  <p class="about-para">
-                    <span class="cat_subtitle">Skills</span>
-                  </p>
-                </v-flex>
-                <v-flex xs12 md6>
-                  <span class="cat_subsubtitle ma-5">Programming</span>
-                  <SkillsCard skill_type="programming" style="margin:1rem;" />
-                </v-flex>
-                <v-flex xs12 md6>
-                  <span class="cat_subsubtitle ma-5">Design & Modeling</span>
-                  <SkillsCard skill_type="design" style="margin:1rem;" />
-                </v-flex>
-                <v-flex xs12 md6>
-                  <span class="cat_subsubtitle ma-5">Language</span>
-                  <SkillsCard skill_type="language" style="margin:1rem;" />
-                </v-flex>
-                <v-flex xs12 md6>
-                  <span class="cat_subsubtitle ma-5">ETC</span>
-                  <SkillsCard skill_type="etc" style="margin:1rem;" />
-                </v-flex>
-              </v-layout>
-            </v-row>
+            <transition name="fade">
+              <v-row v-show="show_skills">
+                <v-layout flex-wrap>
+                  <v-flex xs12 md12>
+                    <p class="about-para">
+                      <span class="cat_subtitle">Skills</span>
+                    </p>
+                  </v-flex>
+                  <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">Programming</span>
+                    <SkillsCard skill_type="programming" style="margin:1rem;" />
+                  </v-flex>
+                  <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">Design & Modeling</span>
+                    <SkillsCard skill_type="design" style="margin:1rem;" />
+                  </v-flex>
+                  <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">Language</span>
+                    <SkillsCard skill_type="language" style="margin:1rem;" />
+                  </v-flex>
+                  <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">ETC</span>
+                    <SkillsCard skill_type="etc" style="margin:1rem;" />
+                  </v-flex>
+                  <v-flex xs12 md12>
+                    <v-sheet style="text-align:center; margin-top:3rem;">
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowSkills()"
+                        text
+                        color="grey darken-1"
+                      >
+                        <v-icon>mdi-close</v-icon>
+                      </v-btn>
+                      <v-btn class="ma-5" fab outlined @click="handleShowExp()" text>Exp</v-btn>
+                    </v-sheet>
+                  </v-flex>
+                </v-layout>
+              </v-row>
+            </transition>
           </v-flex>
         </v-layout>
       </v-container>
@@ -114,7 +154,7 @@ export default {
   methods: {
     handleShowExp() {
       this.show_exp = !this.show_exp;
-      console.log(this.show_exp)
+      console.log(this.show_exp);
       if (this.show_skills == true) {
         this.show_skills = false;
       }
@@ -154,6 +194,14 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.75s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .cat_title {
   font-size: 2rem;
   font-weight: 400;
