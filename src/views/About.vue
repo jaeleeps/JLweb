@@ -3,13 +3,13 @@
     <v-content>
       <v-container fill-height>
         <v-layout justify-center align-center>
-          <v-flex shrink xs11 md8>
+          <v-flex shrink xs11 md10>
             <v-row>
-              <span class="subtitle">Contacts</span>
+              <span class="cat_title">About</span>
             </v-row>
 
             <v-row>
-              <span class="subtitle">About & Contacts</span>
+              <span class="cat_subtitle">About & Contacts</span>
             </v-row>
 
             <v-row>
@@ -35,22 +35,8 @@
                       <v-avatar>
                         <v-icon small>mdi-cellphone-android</v-icon>
                       </v-avatar>8210-2309-4277
-                    </v-chip>                    
+                    </v-chip>
                   </span>
-                  <!-- <span>
-                    <v-btn color="primary" depressed class="ma-1">
-                      <span class="font-weight-light">
-                        <v-icon class="mr-2">mdi-email</v-icon>jaeleeps@gmail.com
-                      </span>
-                    </v-btn>
-                  </span>
-                  <span>
-                    <v-btn color="primary" depressed class="ma-1">
-                      <span class="font-weight-light">
-                        <v-icon class="mr-2">mdi-cellphone-android</v-icon>8210-2309-4277
-                      </span>
-                    </v-btn>
-                  </span> -->
 
                   <span style="margin-top: 0.5rem;">
                     <span class="ma-1" v-for="(contact, i) in contacts_btn" :key="i">
@@ -69,54 +55,38 @@
             </v-row>
 
             <v-row>
-              <span class="subtitle">Academics & Work Experiences</span>
+              <v-btn @click="handleShowExp()" text>Experiences</v-btn>
+              <v-btn @click="handleShowSkills()" text>Skills</v-btn>
+            </v-row>
+
+            <v-row v-show="show_exp">
+              <span class="cat_subtitle">Academics & Work Experiences</span>
               <div style="margin-right:2rem;">
-                <v-timeline :dense="$vuetify.breakpoint.xsOnly">
-                  <v-timeline-item
-                    v-for="(item, i) in academics_data"
-                    :key="i"
-                    color="grey lighten-2"
-                    small
-                  >
-                    <template v-slot:opposite>
-                      <span v-text="item.year"></span>
-                    </template>
-                    <v-card class="elevation-2">
-                      <v-card-title class="title" v-text="item.title" />
-                      <v-card-subtitle style="font-weight: 600;" v-text="item.subtitle" />
-                      <v-card-text
-                        style="padding-top: 0px; padding-bottom: 8px;"
-                        v-for="text in item.info"
-                        :key="text.length"
-                        v-text="text"
-                      />
-                    </v-card>
-                  </v-timeline-item>
-                </v-timeline>
+                <AboutTimeline />
               </div>
             </v-row>
 
-            <v-row>
+            <v-row v-show="show_skills">
               <v-layout flex-wrap>
                 <v-flex xs12 md12>
                   <p class="about-para">
-                    <span class="subtitle">Skills</span>
+                    <span class="cat_subtitle">Skills</span>
                   </p>
                 </v-flex>
                 <v-flex xs12 md6>
-                  <span class="subsubtitle ma-5">Programming</span>
+                  <span class="cat_subsubtitle ma-5">Programming</span>
                   <SkillsCard skill_type="programming" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                  <span class="subsubtitle ma-5">Design & Modeling</span>
+                  <span class="cat_subsubtitle ma-5">Design & Modeling</span>
                   <SkillsCard skill_type="design" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                  <span class="subsubtitle ma-5">Language</span>
+                  <span class="cat_subsubtitle ma-5">Language</span>
                   <SkillsCard skill_type="language" style="margin:1rem;" />
                 </v-flex>
                 <v-flex xs12 md6>
-                  <span class="subsubtitle ma-5">ETC</span>
+                  <span class="cat_subsubtitle ma-5">ETC</span>
                   <SkillsCard skill_type="etc" style="margin:1rem;" />
                 </v-flex>
               </v-layout>
@@ -132,15 +102,36 @@
 import SkillsCard from "@/components/About/SkillsCard";
 import DesignSkillsCard from "@/components/About/DesignSkillsCard";
 import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
+import AboutTimeline from "@/components/About/AboutTimeline";
 
 export default {
   components: {
     DesignSkillsCard,
     ProgrammingSkillsCard,
-    SkillsCard
+    SkillsCard,
+    AboutTimeline
+  },
+  methods: {
+    handleShowExp() {
+      this.show_exp = !this.show_exp;
+      console.log(this.show_exp)
+      if (this.show_skills == true) {
+        this.show_skills = false;
+      }
+      return 0;
+    },
+    handleShowSkills() {
+      this.show_skills = !this.show_skills;
+      if (this.show_exp == true) {
+        this.show_exp = false;
+      }
+      return 0;
+    }
   },
   data: () => ({
     skill_type: "",
+    show_exp: false,
+    show_skills: false,
     contacts_btn: [
       {
         contact_icon: "mdi-linkedin",
@@ -157,47 +148,31 @@ export default {
         contact_color: "#cc3534",
         contact_txt: "Link in NPM"
       }
-    ],
-    academics_data: [
-      {
-        year: "2014~2017",
-        title: "Hankuk Academy of Foreign Studides",
-        subtitle: "International Div. Class of 2017",
-        info: [" Major in Chinese Language", "GPA: 3.88/4.0"]
-      },
-      {
-        year: "2017~",
-        title: "Georgia Institue of Technology",
-        subtitle: "Bachelor of Science in Computer Science",
-        info: [
-          "Minor in Industrial Design",
-          "Major GPA: 4.0/4.0",
-          "Overall GPA: 3.86/4.0"
-        ]
-      },
-      {
-        year: "2018",
-        title: "Naver D2 - Campus Q",
-        subtitle: "Node.js Developer",
-        info: [
-          "CampusQ was a chatbot-integrated education platform developing start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
-        ]
-      }
     ]
   })
 };
 </script>
 
 <style scoped>
-.subtitle {
-  font-size: 1.75rem;
+.cat_title {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  /* color:white; */
+}
+
+.cat_subtitle {
+  font-size: 1.5rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 0px;
 }
 
-.subsubtitle {
+.cat_subsubtitle {
   font-size: 1.3rem;
   /* @media $display-breakpoints.xs-only {
     font-size: 5px;
