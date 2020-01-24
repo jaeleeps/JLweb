@@ -3,7 +3,7 @@
     <v-content>
       <v-container fill-height>
         <v-layout justify-center align-center pb-10>
-          <v-flex shrink xs11 md10>
+          <v-flex shrink xs11 md8>
             <v-row>
               <span class="cat_title">About</span>
             </v-row>
@@ -54,25 +54,35 @@
               </v-col>
             </v-row>
 
-            <v-row>
+            <v-row class="mb-2 cat_subsubtitle" style="text-align: center;" justify="center">
+              <span style="font-size: 0.75rem;"> click to know more about me </span>
+            </v-row>
+            <v-row class="mb-2" style="text-align: center;" justify="center">
+              <DownArrow />
+            </v-row>
+
+            <v-divider />
+            <v-row style="text-align: center;" justify="center">
               <v-btn
                 @click="handleShowExp()"
                 :color="this.show_exp ? `grey lighten-1` : `grey darken-4`"
                 text
               >Experiences</v-btn>
+              <v-icon>mdi-slash-forward </v-icon>
               <v-btn
                 @click="handleShowSkills()"
                 :color="this.show_skills ? `grey lighten-1` : `grey darken-4`"
                 text
               >Skills</v-btn>
             </v-row>
+            <v-divider class="mb-5"/>
 
             <transition name="fade">
               <v-row v-show="show_exp">
                 <span class="cat_subtitle">Academics & Work Experiences</span>
                 <div style="margin-right:2rem;">
                   <AboutTimeline />
-                  <v-sheet style="text-align:center; margin-top:3rem;">
+                  <v-sheet style="text-align:center; margin-top:3rem;" color="transparent">
                     <v-btn
                       class="ma-5"
                       fab
@@ -114,7 +124,7 @@
                     <SkillsCard skill_type="etc" style="margin:1rem;" />
                   </v-flex>
                   <v-flex xs12 md12>
-                    <v-sheet style="text-align:center; margin-top:3rem;">
+                    <v-sheet style="text-align:center; margin-top:3rem;" color="transparent">
                       <v-btn
                         class="ma-5"
                         fab
@@ -143,13 +153,15 @@ import SkillsCard from "@/components/About/SkillsCard";
 import DesignSkillsCard from "@/components/About/DesignSkillsCard";
 import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
 import AboutTimeline from "@/components/About/AboutTimeline";
+import DownArrow from "@/components/DownArrow";
 
 export default {
   components: {
     DesignSkillsCard,
     ProgrammingSkillsCard,
     SkillsCard,
-    AboutTimeline
+    AboutTimeline,
+    DownArrow
   },
   methods: {
     handleShowExp() {
@@ -228,7 +240,7 @@ export default {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-left: 20rem;
+  /* margin-left: 20rem; */
 }
 
 .contacts > span {
@@ -246,7 +258,7 @@ export default {
 
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
-  background-color: #ffffff;
+  background-color: #EFEBE9;
   /* max-width: 100vh; */
   height: 100%;
   /* background-size: cover; */

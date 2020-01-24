@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar absolute color="white" elevate-on-scroll scroll-target="#scrolling-techniques-7">
+  <v-app-bar absolute color="#EFEBE9" elevate-on-scroll scroll-target="#scrolling-techniques-7">
     <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
 

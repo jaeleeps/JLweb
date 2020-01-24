@@ -62,7 +62,6 @@
 import NavBar from "@/components/NavBar";
 import TransparentNavBar from "@/components/TransparentNavBar";
 import NavDrawer from "@/components/NavDrawer.vue";
-import Footer from "@/components/Footer";
 import NavButton from "@/components/NavButton";
 
 import Home from "@/views/Home";
@@ -135,6 +134,18 @@ export default {
   transition: opacity 0.75s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
   opacity: 0;
 }
 
