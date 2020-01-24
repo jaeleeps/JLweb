@@ -22,6 +22,6 @@ export default {
 .back {
   width: 100vw;
   min-height: 100vh;
-  background-color: gray;
+  background-color: #d2b29b;
 }
 </style>

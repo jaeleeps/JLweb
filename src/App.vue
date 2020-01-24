@@ -93,38 +93,37 @@ export default {
     },
     onIntersectHome(entries, observer) {
       this.$store.state.isIntersectingHome =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
-      // console.log(
-      //   this.$store.state.isIntersectingHome,
-      //   entries[0].intersectionRatio,
-      //   this.$store.state.isIntersectingAbout,
-      //   this.$store.state.isIntersectingProjects
-      // );
+        entries[0].intersectionRatio > 0.001;
+      // entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
+      this.intersectLogTest(entries[0])
     },
     onIntersectAbout(entries, observer) {
       this.$store.state.isIntersectingAbout =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
-      // console.log(
-      //   this.$store.state.isIntersectingHome,
-      //   this.$store.state.isIntersectingAbout,
-      //   entries[0].intersectionRatio,
-      //   this.$store.state.isIntersectingProjects
-      // );
+        entries[0].intersectionRatio > 0.001;
+      // entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
+      this.intersectLogTest(entries[0])
     },
     onIntersectProjects(entries, observer) {
       this.$store.state.isIntersectingProjects =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
-      // console.log(
-      //   // entries[0],
-      //   this.$store.state.isIntersectingHome,
-      //   this.$store.state.isIntersectingAbout,
-      //   this.$store.state.isIntersectingProjects,
-      //   entries[0].intersectionRatio
-      // );
+        entries[0].intersectionRatio > 0.001;
+      // entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
+      this.intersectLogTest(entries[0])
     },
     onIntersectDesign(entries, observer) {
       this.$store.state.isIntersectingDesign =
-        entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
+        entries[0].intersectionRatio > 0.001;
+      // entries[0].isIntersecting && entries[0].intersectionRatio > 0.001;
+      this.intersectLogTest(entries[0])
+    },
+    intersectLogTest(entries) {
+      // console.log(
+      //   // entries.isIntersecting,
+      //   entries.intersectionRatio,
+      //   this.$store.state.isIntersectingHome,
+      //   this.$store.state.isIntersectingAbout,
+      //   this.$store.state.isIntersectingProjects,
+      //   this.$store.state.isIntersectingDesign
+      // );
     }
   }
 };
