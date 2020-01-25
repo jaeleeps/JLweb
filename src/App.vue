@@ -17,7 +17,7 @@
         </div>
         <div
           id="about-page"
-          class="component-wrapper"
+          class="component-wrapper upper"
           v-intersect="{
           handler: onIntersectAbout,
           options: {
@@ -29,7 +29,7 @@
         </div>
         <div
           id="projects-page"
-          class="component-wrapper"
+          class="component-wrapper upper"
           v-intersect="{
             handler: onIntersectProjects,
             options: {
@@ -37,11 +37,11 @@
             }
         }"
         >
-          <Projects />
+          <Projects/>
         </div>
         <div
           id="design-page"
-          class="component-wrapper"
+          class="component-wrapper upper"
           v-intersect="{
             handler: onIntersectDesign,
             options: {
@@ -147,6 +147,10 @@ export default {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.upper {
+  z-index: 5;
 }
 
 .scroll-wrapper {

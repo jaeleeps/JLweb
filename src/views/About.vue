@@ -3,7 +3,7 @@
     <v-content>
       <v-container fill-height>
         <v-layout justify-center align-center pb-10>
-          <v-flex shrink xs11 md8>
+          <v-flex shrink xs10 md9>
             <v-row>
               <span class="cat_title">About</span>
             </v-row>
@@ -42,7 +42,9 @@
                     <span class="ma-1" v-for="(contact, i) in contacts_btn" :key="i">
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on }">
-                          <v-btn v-on="on" fab dark small :color="contact.contact_color">
+                          <v-btn v-on="on" fab dark small :color="contact.contact_color"
+                            :href="contact.contact_url"
+                          >
                             <v-icon>{{contact.contact_icon}}</v-icon>
                           </v-btn>
                         </template>
@@ -80,9 +82,9 @@
             <transition name="fade">
               <v-row v-show="show_exp">
                 <span class="cat_subtitle">Academics & Work Experiences</span>
-                <div style="margin-right:2rem;">
+                <div class="ml-n10 mt-5">
                   <AboutTimeline />
-                  <v-sheet style="text-align:center; margin-top:3rem;" color="transparent">
+                  <v-sheet style="text-align:center; margin-top:2rem;" color="transparent">
                     <v-btn
                       class="ma-5"
                       fab
@@ -124,7 +126,7 @@
                     <SkillsCard skill_type="etc" style="margin:1rem;" />
                   </v-flex>
                   <v-flex xs12 md12>
-                    <v-sheet style="text-align:center; margin-top:3rem;" color="transparent">
+                    <v-sheet style="text-align:center; margin-top:2rem;" color="transparent">
                       <v-btn
                         class="ma-5"
                         fab
@@ -188,17 +190,20 @@ export default {
       {
         contact_icon: "mdi-linkedin",
         contact_color: "#2867B2",
-        contact_txt: "Link in LinkedIn"
+        contact_txt: "Link in LinkedIn",
+        contact_url: "https://www.linkedin.com/in/jaeyoung-lee/"
       },
       {
         contact_icon: "mdi-github-circle",
         contact_color: "#333",
-        contact_txt: "Link in Github"
+        contact_txt: "Link in Github",
+        contact_url: "https://github.com/jaeleeps"
       },
       {
         contact_icon: "mdi-npm-variant-outline",
         contact_color: "#cc3534",
-        contact_txt: "Link in NPM"
+        contact_txt: "Link in NPM",
+        contact_url: "https://www.npmjs.com/package/kor-string-similarity"
       }
     ]
   })

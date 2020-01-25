@@ -8,9 +8,14 @@
               <span class="cat_title">Design</span>
             </v-row>
 
+            <v-row class="ma-5 cat_subsubtitle" style="text-align: center;" justify="center">
+              <v-img :src="require('@/assets/under_construction.png')">
+              </v-img>
+            </v-row>
+
             <v-row class="mb-2 cat_subsubtitle" style="text-align: center;" justify="center">
               <!-- <HoriAnimation /> -->
-              <v-progress-circular :size="50" color="#d2b49b" indeterminate></v-progress-circular>
+              <!-- <v-progress-circular :size="50" color="#d2b49b" indeterminate></v-progress-circular> -->
             </v-row>
 
             <v-row class="ma-5 cat_subsubtitle" style="text-align: center;" justify="center">
@@ -36,7 +41,12 @@ export default {
     MainCarousel,
     ProjectCard,
     HoriAnimation
-  }
+  },
+  data: () => ({
+    image: {
+      under_construction: require('@/assets/under_construction.png'),
+    }
+  })
 };
 </script>
 
