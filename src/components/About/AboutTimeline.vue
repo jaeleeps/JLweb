@@ -26,7 +26,10 @@ export default {
         year: "2014~2017",
         title: "Hankuk Academy of Foreign Studides",
         cat_subtitle: "International Div. Class of 2017",
-        info: [" Major in Chinese Language", "GPA: 3.88/4.0"]
+        info: [
+          " Major in Chinese Language",
+          "Club/Organization: President of Student Council Department of Environment, KIYAC(Korea International Young Adult's Community, Event Coordinator), Kokos(Mural/Art therapy vonlunteer group)"
+        ]
       },
       {
         year: "2017~",
@@ -35,7 +38,8 @@ export default {
         info: [
           "Minor in Industrial Design",
           "Major GPA: 4.0/4.0",
-          "Overall GPA: 3.86/4.0"
+          "Overall GPA: 3.86/4.0",
+          "Club/Organization: VGDev(Video Game Developing Group, member), KCS(Korean Computer Science student association, member)"
         ]
       },
       {
@@ -43,7 +47,19 @@ export default {
         title: "Naver D2 - Campus Q",
         cat_subtitle: "Node.js Developer",
         info: [
-          "CampusQ was a chatbot-integrated education platform developing start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
+          "May. 2018 - Aug. 2018",
+          "CampusQ was chatbot-integrated Question Answering platform start-up which received funding and office space from Naver D2 and won Naver D2 Campus Tech Attack Program.",
+          "Developed FB messenger chatbot for CampusQ using Node.js and assisted in designing UI and developing front/backend of CampusQ in React, Redux, and SQL."
+          // "CampusQ was a chatbot-integrated education platform start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
+        ]
+      },
+      {
+        year: "2019",
+        title: "Republic of Korea Marine Corps",
+        cat_subtitle: "Sergent | Informaion Operations Officer, Corps Translator(Eng-Kor)",
+        info: [
+          "Major General-level Commendatin(2nd Marine Division Commandor)", "Lieutenant General-level Commendation(ROK Marine Corps Commandant)"
+          // "CampusQ was a chatbot-integrated education platform start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
         ]
       }
     ]
