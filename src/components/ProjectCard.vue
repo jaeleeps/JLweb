@@ -112,6 +112,19 @@ export default {
         related_link:
           "https://vgdev.gtorg.gatech.edu/game/trouble-on-beryl-isle/",
         link_icon: "mdi-application"
+      },
+      {
+        title_txt: "Personal website",
+        dev_stacks: "Vue.js, Vuetify.js, Vuex, Node.js",
+        main_txt_arr: [
+          "Scroll-based SPA portfolio website."
+        ],
+        main_img: require("@/assets/projects/jleeweb_img01.png"),
+        show: false,
+        hover: false,
+        related_link:
+          "https://github.com/jaeleeps/JLweb",
+        link_icon: "mdi-github-circle"
       }
     ]
   })

@@ -23,21 +23,21 @@
         </v-chip>
       </div>
       <div
-        class="intro_txt pl-10 pr-10 mb-n10"
-        :style=" $vuetify.breakpoint.xsOnly ? `max-width: 100vw; margin-bottom: 10rem;`: `max-width: 50vw;` "
+        class="intro_txt pl-10 pr-10"
+        :style=" $vuetify.breakpoint.xsOnly ? `max-width: 100vw; margin-bottom: 5rem;`: `max-width: 50vw;` "
       >
         <v-icon class="mb-7" v-if="!$vuetify.breakpoint.xsOnly">mdi-format-quote-open</v-icon>
           Welcome to my personal website!
         <v-icon class="mb-7" v-if="!$vuetify.breakpoint.xsOnly">mdi-format-quote-close</v-icon>
       </div>
-      <div :class=" $vuetify.breakpoint.xsOnly ? `mt-10` : ``">
+      <div :class=" $vuetify.breakpoint.xsOnly ? `` : `mt-5`">
         <v-img
-          class="mt-n10"
+          class=""
           style="margin:0 auto;"
           :src="require('@/assets/main_img01.png')"
           eager
           contain
-          :max-width="$vuetify.breakpoint.xsOnly ? `95vw` : `60vw`"
+          :max-width="$vuetify.breakpoint.xsOnly ? `95vw` : `40vw`"
         ></v-img>
       </div>
     </div>
@@ -65,7 +65,7 @@
 
 #content {
   /* background: #06c; */
-  /* flex: 0 0 120px; */
+  flex: 0 0 120px;
   margin: 0 auto;
   padding: 0;
   font-size: 1.5rem;

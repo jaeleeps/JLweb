@@ -2,7 +2,6 @@
   <v-app-bar absolute color="#EFEBE9" elevate-on-scroll scroll-target="#scrolling-techniques-7">
     <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
-
     <v-toolbar-title>
       <v-btn text href="#home-page" target="_self">
         <span class="font-weight-light">Jaeyoung</span>
@@ -34,6 +33,13 @@
           class="mr-2"
           :class="`${this.$store.state.isIntersectingProjects ? 'active-btn' : 'deactive-btn'}`"
         >projects</span>
+      </v-btn>
+      <v-btn href="#design-page" target="_self" text>
+        <!-- <v-icon>mdi-heart</v-icon> -->
+        <span
+          class="mr-2"
+          :class="`${this.$store.state.isIntersectingDesign ? 'active-btn' : 'deactive-btn'}`"
+        >Design</span>
       </v-btn>
     </div>
   </v-app-bar>

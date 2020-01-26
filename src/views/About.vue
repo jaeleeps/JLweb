@@ -152,15 +152,11 @@
 
 <script>
 import SkillsCard from "@/components/About/SkillsCard";
-import DesignSkillsCard from "@/components/About/DesignSkillsCard";
-import ProgrammingSkillsCard from "@/components/About/ProgrammingSkillsCard";
 import AboutTimeline from "@/components/About/AboutTimeline";
 import DownArrow from "@/components/DownArrow";
 
 export default {
   components: {
-    DesignSkillsCard,
-    ProgrammingSkillsCard,
     SkillsCard,
     AboutTimeline,
     DownArrow

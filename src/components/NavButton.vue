@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-btn-wrapper">
+  <div class="nav-btn-wrapper" :style="$vuetify.breakpoint.xsOnly ? 'right: 0rem;' : ``">
     <span>
       <v-btn color="#b39377" fab :dark="true"
         :x-small="!this.$store.state.isIntersectingHome" :small="this.$store.state.isIntersectingHome"
@@ -54,7 +54,7 @@ export default {
   /* z-index: 1; */
   position: absolute;
   top: 45vh;
-  right: 0;
+  right: 1rem;
   color: red;
 }
 
