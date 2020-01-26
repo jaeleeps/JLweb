@@ -1,38 +1,81 @@
 // https://www.awwwards.com/websites/portfolio/
 
 <template>
-  <div>
-    <v-container fluid fill-height class="mp-0">
-      <v-layout class="main_contents_wrapper" flex align-center justify-center>
-        <span>Jaeyoung Lee</span>
-      </v-layout>
-    </v-container>
+  <div id="container">
+    <div id="content">
+      <div class="upper name_txt">
+        <span style="font-weight:200;">
+          Jaeyoung
+          <span style="font-weight:400;">Lee</span>
+        </span>
+      </div>
+      <div class="typeani-wrapper">
+        <!-- <span style="color: #212121;">hi</span> -->
+        <TypeAnimation />
+      </div>
+      <div class="intro_txt">
+        <v-icon>mdi-format-quote-open</v-icon>
+        I'm Jaeyoung Lee, 
+        <v-icon>mdi-format-quote-close</v-icon>
+      </div>
+      <div>
+        <v-img
+          class="mt-n10"
+          style="margin:0 auto;"
+          :src="require('@/assets/main_img01.png')"
+          eager
+          contain
+          :max-width="$vuetify.breakpoint.xsOnly ? `90vw` : `60vw`"
+        ></v-img>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-div {
-  max-width: 100vw;
+#container {
+  margin: 0;
+  padding: 0;
+  color: white;
+  /* background: #d2b49b; */
+  background: url('https://images.unsplash.com/photo-1566702580807-95611c919b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
+  background-size: cover;
+  background-position: center;
+  bottom: 0;
+  width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main_contents_wrapper {
+
+#content {
+  /* background: #06c; */
+  /* flex: 0 0 120px; */
+  margin: 0 auto;
+  padding: 0;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
   text-align: center;
+  font-weight: 100;
 }
 
-.main_contents_wrapper > span {
-  /* font-family: Druk Wide Cy TT Medium; */
-  /* font-family: Optima; */
-  font-weight: 200;
-  font-size: 1.25rem;
-  letter-spacing: 2px;
-  width: 100%;
+.typeani_wrapper {
+  color: #212121;
 }
 
-.main_contents_wrapper > .title_name {
-  font-weight: 300;
-  text-transform: uppercase;
+.intro_txt {
+  color: #212121;
+  font-size: 0.9rem;
+}
+
+.name_txt {
   font-size: 2rem;
-  width: 100%;
+  letter-spacing: 5px;
+}
+
+.upper {
+  text-transform: uppercase;
 }
 </style>
 
@@ -41,6 +84,7 @@ div {
 // @ is an alias to /src
 import MainCarousel from "@/components/MainCarousel";
 import WindowFooter from "@/components/WindowFooter";
+import TypeAnimation from "@/components/TypeAnimation";
 
 window.$ = require("jquery");
 window.JQuery = require("jquery");
@@ -49,7 +93,8 @@ export default {
   name: "home",
   components: {
     MainCarousel,
-    WindowFooter
+    WindowFooter,
+    TypeAnimation
   },
   data: () => ({
     xPos: 0,
