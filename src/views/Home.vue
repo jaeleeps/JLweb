@@ -3,29 +3,41 @@
 <template>
   <div id="container">
     <div id="content">
-      <div class="upper name_txt">
-        <span style="font-weight:200;">
+      <div class="upper name_txt ma-3">
+        <span style="font-weight:200; border-bottom: 1px solid #757575; padding-bottom: 5px;">
           Jaeyoung
           <span style="font-weight:400;">Lee</span>
         </span>
-      </div>
-      <div class="typeani-wrapper">
-        <!-- <span style="color: #212121;">hi</span> -->
         <TypeAnimation />
       </div>
-      <div class="intro_txt">
-        <v-icon>mdi-format-quote-open</v-icon>
-        I'm Jaeyoung Lee, 
-        <v-icon>mdi-format-quote-close</v-icon>
+      <div class="text-center">
+        <v-chip
+          :small="$vuetify.breakpoint.xsOnly"
+          v-for="(tag, i) in etc"
+          :key="i"
+          class="ma-1 upper"
+          style="font-size: 0.7rem; letter-spacing: 1px;"
+        >
+          <v-icon :x-small="$vuetify.breakpoint.xsOnly" left :color="tag.color">{{tag.icon}}</v-icon>
+          {{tag.title}}
+        </v-chip>
       </div>
-      <div>
+      <div
+        class="intro_txt pl-10 pr-10 mb-n10"
+        :style=" $vuetify.breakpoint.xsOnly ? `max-width: 100vw; margin-bottom: 10rem;`: `max-width: 50vw;` "
+      >
+        <v-icon class="mb-7" v-if="!$vuetify.breakpoint.xsOnly">mdi-format-quote-open</v-icon>
+          Welcome to my personal website!
+        <v-icon class="mb-7" v-if="!$vuetify.breakpoint.xsOnly">mdi-format-quote-close</v-icon>
+      </div>
+      <div :class=" $vuetify.breakpoint.xsOnly ? `mt-10` : ``">
         <v-img
           class="mt-n10"
           style="margin:0 auto;"
           :src="require('@/assets/main_img01.png')"
           eager
           contain
-          :max-width="$vuetify.breakpoint.xsOnly ? `90vw` : `60vw`"
+          :max-width="$vuetify.breakpoint.xsOnly ? `95vw` : `60vw`"
         ></v-img>
       </div>
     </div>
@@ -33,12 +45,14 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
 #container {
   margin: 0;
   padding: 0;
   color: white;
   /* background: #d2b49b; */
-  background: url('https://images.unsplash.com/photo-1566702580807-95611c919b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
+  background: url("https://images.unsplash.com/photo-1566702580807-95611c919b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
   background-size: cover;
   background-position: center;
   bottom: 0;
@@ -60,18 +74,22 @@
   font-weight: 100;
 }
 
-.typeani_wrapper {
-  color: #212121;
-}
-
 .intro_txt {
+  font-family: 'Pacifico', cursive;
   color: #212121;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
 }
 
 .name_txt {
   font-size: 2rem;
   letter-spacing: 5px;
+  background: #212121;
+  padding: 0.75rem;
+  justify-content: center;
 }
 
 .upper {
@@ -98,7 +116,27 @@ export default {
   },
   data: () => ({
     xPos: 0,
-    yPos: 0
+    yPos: 0,
+    etc: [
+      {
+        title: "Programming",
+        color: "#4c75a3",
+        icon: "mdi-account-group",
+        rating: ""
+      },
+      {
+        title: "Algorithm",
+        color: "#4c75a3",
+        icon: "mdi-voice",
+        rating: ""
+      },
+      {
+        title: "Design",
+        color: "#4c75a3",
+        icon: "mdi-party-popper",
+        rating: ""
+      }
+    ]
   }),
   methods: {
     someMethod: function(event) {

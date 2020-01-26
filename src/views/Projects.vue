@@ -3,7 +3,7 @@
     <v-container fill-height fluid justify-center align-center>
       <v-layout justify-center align-center>
         <v-row align="center" justify="center">
-          <v-flex shrink xs11 md8 justify-center>
+          <v-flex shrink xs11 md8 justify-center class="pt-10">
             <div class="cat_title">Projects</div>
             <ProjectCard />
 

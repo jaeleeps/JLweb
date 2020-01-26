@@ -1,5 +1,5 @@
 <template>
-  <p class="demo">
+  <div class="demo">
     <span class="demo-item">
       <span class="demo-item_inner">Fullstack developer</span>
     </span>
@@ -9,34 +9,34 @@
     <span class="demo-item">
       <span class="demo-item_inner">Data Scientist</span>
     </span>
-  </p>
+  </div>
 </template>
 
 <style scoped>
 .demo {
-  margin-top: -10px;
-  margin-bottom: -40px;
   height: 80px;
   display: block;
   overflow: hidden;
+  position: relative;
+  margin-bottom: -40px;
 }
 .demo-item {
-  width: 100vw;
+  display: table;
+  margin: 0 auto;
   height: 80px;
-  display: inline;
-  float: left;
-  clear: left;
+  text-align: center;
+  overflow: hidden;
 }
 
 .demo {
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-color: #2a2a28; */
-  color: #2a2a28;
+  color: white;
 }
 
 .demo-item {
   position: relative;
-  font-size: 0.75em;
+  font-size: 0.5em;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 100;
@@ -62,7 +62,7 @@
   bottom: -2px;
   left: 0;
   border-left: 1px solid #fff;
-  background-color: #d2b49b;
+  background-color: #212121;
   animation: animatetoright 3s steps(20) infinite alternate;
 }
 
