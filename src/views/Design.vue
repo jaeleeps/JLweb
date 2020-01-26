@@ -9,7 +9,9 @@
             </v-row>
 
             <v-row class="ma-5 cat_subsubtitle" style="text-align: center;" justify="center">
-              <v-img :src="require('@/assets/under_construction.png')">
+              <v-img :src="require('@/assets/under_construction.png')"
+              max-height="400"
+              contain>
               </v-img>
             </v-row>
 

@@ -1,78 +1,28 @@
 // https://www.awwwards.com/websites/portfolio/
 
 <template>
-  <!-- <div class="back" v-on:mousemove="someMethod">
-    <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div>
-    <v-app></v-app>
-  </div>-->
-  <!-- <v-app id="inspire">
+  <div class="back" v-on:mousemove="someMethod">
+    <!-- <div class="black-overlay" id="top-image" v-bind:style="{ backgroundPosition: `${getPos()}`}"></div> -->
+    <v-app id="inspire">
       <v-container fluid>
-        <v-layout>
-          <v-row style="text-align:center; color:black;">
-            hifasdfasd
+        <v-layout align-center>
+          <v-row></v-row>
+          <v-row style="text-align:center;">
+            <v-img :src="require('@/assets/main_img01.png')" eager height="200">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
           </v-row>
         </v-layout>
       </v-container>
-  </v-app>-->
-
-  <div class="perspective overflow">
-    <div class="preserve container">
-      <div class="parallax" style="transform: translateZ(-1.2px)">z = -1.2</div>
-      <div class="parallax" style="transform: translateZ(-1.0px)">z = -1.0</div>
-      <div class="parallax" style="transform: translateZ(-0.8px)">z = -0.8</div>
-      <div class="parallax" style="transform: translateZ(-0.6px)">z = -0.6</div>
-      <div class="parallax" style="transform: translateZ(-0.4px)">z = -0.4</div>
-      <div class="parallax" style="transform: translateZ(-0.2px)">z = -0.2</div>
-      <div class="parallax" style="transform: translateZ(0px)">z = 0</div>
-      <div class="spacer"></div>
-    </div>
+    </v-app>
   </div>
 </template>
 
-
 <style scoped>
-.overflow {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  border: 1px solid black;
-  width: 100vw;
-  height: 100vh;
-}
-
-.perspective {
-  perspective: 1px;
-  perspective-origin: top left;
-}
-
-.preserve {
-  transform-style: preserve-3d;
-}
-
-.parallax {
-  position: absolute;
-  top: 200px;
-  margin-left: 250px;
-  font-size: 24px;
-}
-
-.spacer {
-  height: 100vh;
-}
-
-.sticky {
-  position: sticky;
-  position: -webkit-sticky;
-}
-
-.sticky {
-  position: sticky;
-  position: -webkit-sticky;
-}
-
-.main_parallax {
-  min-height: 100vh;
-}
-
 .text-wrapper {
   color: #fff;
   background-color: #fff;
@@ -91,9 +41,6 @@
   height: 100vh;
   background-size: calc(100vh + 200px);
 } */
-
-#top-image {
-}
 
 .black-overlay:before {
   /* position: absolute; */
@@ -118,8 +65,7 @@
   max-height: 100vh;
 }
 #inspire {
-  /* background-color: #D1D2D4; */
-  /* background: none; */
+  background-color: #d2b49b;
 }
 </style>
 
