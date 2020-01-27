@@ -33,12 +33,10 @@
 </template>
 
 <script>
-import MainCarousel from "@/components/MainCarousel";
 import ProjectCard from "@/components/ProjectCard";
 
 export default {
   components: {
-    MainCarousel,
     ProjectCard
   }
 };
@@ -67,7 +65,6 @@ export default {
     rgba(210, 178, 155, 1) 97%,
     rgba(255, 255, 255, 0) 100%
   ); */
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

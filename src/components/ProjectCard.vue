@@ -7,6 +7,7 @@
             class="black--text align-end"
             aspect-ratio="1"
             height="200px"
+            eager
             contain
             :src="item.main_img"
             lazy-src="@/assets/profile_img_01.png"

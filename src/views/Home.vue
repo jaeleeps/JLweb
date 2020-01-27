@@ -100,7 +100,6 @@
 
 <script>
 // @ is an alias to /src
-import MainCarousel from "@/components/MainCarousel";
 import WindowFooter from "@/components/WindowFooter";
 import TypeAnimation from "@/components/TypeAnimation";
 
@@ -110,7 +109,6 @@ window.JQuery = require("jquery");
 export default {
   name: "home",
   components: {
-    MainCarousel,
     WindowFooter,
     TypeAnimation
   },

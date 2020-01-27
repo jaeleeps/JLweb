@@ -1,6 +1,5 @@
 <template>
   <div class="arrow bounce">
-    <!-- <a class="fa fa-arrow-down fa-2x" href="#"></a> -->
     <v-icon x-large>mdi-chevron-down</v-icon>
   </div>
 </template>

@@ -8,23 +8,15 @@
               <span class="cat_title">Design</span>
             </v-row>
 
-            <v-row class="ma-5 cat_subsubtitle" style="text-align: center;" justify="center">
+            <v-row class="ma-5 cat_subsubtitle"  justify="center">
               <v-img :src="require('@/assets/under_construction.png')"
               max-height="400"
-              contain>
+              contain
+              eager>
               </v-img>
             </v-row>
-
-            <v-row class="mb-2 cat_subsubtitle" style="text-align: center;" justify="center">
-              <!-- <HoriAnimation /> -->
-              <!-- <v-progress-circular :size="50" color="#d2b49b" indeterminate></v-progress-circular> -->
-            </v-row>
-
-            <v-row class="ma-5 cat_subsubtitle" style="text-align: center;" justify="center">
+            <v-row class="ma-5 mt-10 cat_subsubtitle" style="text-align: center;" justify="center">
               <span style="font-size: 0.75rem;">Design Page is under construction</span>
-            </v-row>
-            <v-row class="mb-2" style="text-align: center;" justify="center">
-              <!-- <DownArrow /> -->
             </v-row>
           </v-flex>
         </v-layout>
@@ -34,15 +26,10 @@
 </template>
 
 <script>
-import MainCarousel from "@/components/MainCarousel";
-import ProjectCard from "@/components/ProjectCard";
-import HoriAnimation from "@/components/HoriAnimation";
 
 export default {
   components: {
-    MainCarousel,
-    ProjectCard,
-    HoriAnimation
+
   },
   data: () => ({
     image: {

@@ -54,7 +54,6 @@ export default {
   methods: {
     toggleDrawer() {
       this.$store.state.drawer = !this.$store.state.drawer;
-      console.log("hi");
     }
   }
 };

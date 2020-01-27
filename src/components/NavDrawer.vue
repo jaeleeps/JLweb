@@ -48,7 +48,6 @@
 <script>
   export default {
     name: 'NavDrawer',
-    // props: ['drawer'],
     data () {
       return {
         items: [

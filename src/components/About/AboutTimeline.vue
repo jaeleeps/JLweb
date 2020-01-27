@@ -49,8 +49,7 @@ export default {
         info: [
           "May. 2018 - Aug. 2018",
           "CampusQ was chatbot-integrated Question Answering platform start-up which received funding and office space from Naver D2 and won Naver D2 Campus Tech Attack Program.",
-          "Developed FB messenger chatbot for CampusQ using Node.js and assisted in designing UI and developing front/backend of CampusQ in React, Redux, and SQL."
-          // "CampusQ was a chatbot-integrated education platform start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
+          "Developed FB messenger chatbot for CampusQ using Node.js and assisted designing UI and developing front/backend of CampusQ in React, Redux, and SQL."
         ]
       },
       {
@@ -58,8 +57,7 @@ export default {
         title: "Republic of Korea Marine Corps",
         cat_subtitle: "Sergent | Informaion Operations Officer, Corps Translator(Eng-Kor)",
         info: [
-          "Major General-level Commendatin(2nd Marine Division Commandor)", "Lieutenant General-level Commendation(ROK Marine Corps Commandant)"
-          // "CampusQ was a chatbot-integrated education platform start-up which won Naver D2 Campus Tech Attack Program and later became the foundation of Bloomchat(bloomchat.app)."
+          "Major General-level Commendation(2nd Marine Division Commandor)", "Lieutenant General-level Commendation(ROK Marine Corps Commandant)"
         ]
       }
     ]
