@@ -42,7 +42,12 @@
                     <span class="ma-1" v-for="(contact, i) in contacts_btn" :key="i">
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on }">
-                          <v-btn v-on="on" fab dark small :color="contact.contact_color"
+                          <v-btn
+                            v-on="on"
+                            fab
+                            dark
+                            small
+                            :color="contact.contact_color"
                             :href="contact.contact_url"
                           >
                             <v-icon>{{contact.contact_icon}}</v-icon>
@@ -57,27 +62,36 @@
             </v-row>
 
             <v-row class="mb-2 cat_subsubtitle" style="text-align: center;" justify="center">
-              <span style="font-size: 0.75rem;"> click to know more about me </span>
+              <span style="font-size: 0.75rem;">click to know more about me</span>
             </v-row>
             <v-row class="mb-2" style="text-align: center;" justify="center">
               <DownArrow />
             </v-row>
 
             <v-divider />
-            <v-row style="text-align: center;" justify="center">
+            <v-row justify="center">
               <v-btn
                 @click="handleShowExp()"
                 :color="this.show_exp ? `grey lighten-1` : `grey darken-4`"
+                :small="$vuetify.breakpoint.xsOnly"
                 text
               >Experiences</v-btn>
-              <v-icon>mdi-slash-forward </v-icon>
+              <v-icon>mdi-slash-forward</v-icon>
               <v-btn
                 @click="handleShowSkills()"
                 :color="this.show_skills ? `grey lighten-1` : `grey darken-4`"
+                :small="$vuetify.breakpoint.xsOnly"
                 text
               >Skills</v-btn>
+              <v-icon>mdi-slash-forward</v-icon>
+              <v-btn
+                @click="handleShowEtc()"
+                :color="this.show_etc ? `grey lighten-1` : `grey darken-4`"
+                :small="$vuetify.breakpoint.xsOnly"
+                text
+              >Etc</v-btn>
             </v-row>
-            <v-divider class="mb-5"/>
+            <v-divider class="mb-5" />
 
             <transition name="fade">
               <v-row v-show="show_exp">
@@ -93,9 +107,11 @@
                       text
                       color="grey darken-1"
                     >
-                      <v-icon>mdi-close</v-icon>
+                      <!-- <v-icon>mdi-close</v-icon> -->
+                      <v-icon>mdi-chevron-up</v-icon>
                     </v-btn>
                     <v-btn class="ma-5" fab outlined @click="handleShowSkills()" text>skiils</v-btn>
+                    <v-btn class="ma-5" fab outlined @click="handleShowEtc()" text>Etc</v-btn>
                   </v-sheet>
                 </div>
               </v-row>
@@ -127,6 +143,7 @@
                   </v-flex>
                   <v-flex xs12 md12>
                     <v-sheet style="text-align:center; margin-top:2rem;" color="transparent">
+                      <v-btn class="ma-5" fab outlined @click="handleShowExp()" text>Exp</v-btn>
                       <v-btn
                         class="ma-5"
                         fab
@@ -135,9 +152,45 @@
                         text
                         color="grey darken-1"
                       >
-                        <v-icon>mdi-close</v-icon>
+                        <v-icon>mdi-chevron-up</v-icon>
                       </v-btn>
+                      <v-btn class="ma-5" fab outlined @click="handleShowEtc()" text>Etc</v-btn>
+                    </v-sheet>
+                  </v-flex>
+                </v-layout>
+              </v-row>
+            </transition>
+
+            <transition name="fade">
+              <v-row v-show="show_etc">
+                <v-layout flex-wrap>
+                  <span class="cat_subtitle mb-5">Etc.</span>
+                  <v-flex xs12 md12>
+                    <span class="cat_subsubtitle ma-5">Honors & Awards</span>
+                  </v-flex>
+                  <v-flex xs12 md12>
+                    <span class="cat_subsubtitle ma-5">Certificates</span>
+                  </v-flex>
+
+
+                  <v-flex xs12 md12>
+                    <v-sheet
+                      style="text-align:center; margin-top:2rem;"
+                      color="transparent"
+                      justify-center
+                    >
                       <v-btn class="ma-5" fab outlined @click="handleShowExp()" text>Exp</v-btn>
+                      <v-btn class="ma-5" fab outlined @click="handleShowSkills()" text>Skills</v-btn>
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowEtc()"
+                        text
+                        color="grey darken-1"
+                      >
+                        <v-icon>mdi-chevron-up</v-icon>
+                      </v-btn>
                     </v-sheet>
                   </v-flex>
                 </v-layout>
@@ -164,24 +217,25 @@ export default {
   methods: {
     handleShowExp() {
       this.show_exp = !this.show_exp;
-      console.log(this.show_exp);
-      if (this.show_skills == true) {
-        this.show_skills = false;
-      }
-      return 0;
+      this.show_skills = false;
+      this.show_etc = false;
     },
     handleShowSkills() {
       this.show_skills = !this.show_skills;
-      if (this.show_exp == true) {
-        this.show_exp = false;
-      }
-      return 0;
+      this.show_exp = false;
+      this.show_etc = false;
+    },
+    handleShowEtc() {
+      this.show_etc = !this.show_etc;
+      this.show_exp = false;
+      this.show_skills = false;
     }
   },
   data: () => ({
     skill_type: "",
     show_exp: false,
     show_skills: false,
+    show_etc: false,
     contacts_btn: [
       {
         contact_icon: "mdi-linkedin",
@@ -259,7 +313,7 @@ export default {
 
 .back {
   /* background-image: url(https://c.wallhere.com/photos/7c/94/Windows_XP_Microsoft_Windows_hills-33549.jpg!d); */
-  background-color: #EFEBE9;
+  background-color: #efebe9;
   /* max-width: 100vh; */
   height: 100%;
   /* background-size: cover; */
