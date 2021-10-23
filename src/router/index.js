@@ -25,6 +25,12 @@ const routes = [
     name: 'projects',
     component: Projects
   }, 
+  {
+    path: '/miracle-scope-solar',
+    redirect: "198.13.51.149/solar/",
+    name: 'home',
+    component: Home
+  }
 ]
 
 const router = new VueRouter({
