@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@iconify/vue2": "^1.0.0",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.3",
     "express": "^4.17.1",

@@ -13,33 +13,47 @@
             </v-row>
 
             <v-row>
-              <v-col xs12 md6 style="text-align: center;">
+              <v-col xs12 md6 style="text-align: center">
                 <v-avatar tile size="250">
                   <img src="@/assets/profile_img_01.png" alt="John" />
                 </v-avatar>
               </v-col>
-              <v-col xs12 md6 style="text-align: center;">
+              <v-col xs12 md6 style="text-align: center">
                 <p class="contacts">
-                  <span style="letter-spacing: 4px; font-size: 2rem;" class="ma-1">
+                  <span
+                    style="letter-spacing: 4px; font-size: 2rem"
+                    class="ma-1"
+                  >
                     JAEYOUNG
-                    <span style="font-weight: 400;">LEE</span>
+                    <span style="font-weight: 400">LEE</span>
                   </span>
 
                   <span>
-                    <v-chip class="ma-1" color="grey lighten-1" text-color="white">
-                      <v-avatar>
-                        <v-icon small>mdi-email</v-icon>
-                      </v-avatar>jaeleeps@gmail.com
+                    <v-chip
+                      class="ma-1"
+                      color="grey lighten-1"
+                      text-color="white"
+                    >
+                      <v-avatar> <v-icon small>mdi-email</v-icon> </v-avatar
+                      >jaeleeps@gmail.com
                     </v-chip>
-                    <v-chip class="ma-1" color="grey lighten-1" text-color="white">
+                    <v-chip
+                      class="ma-1"
+                      color="grey lighten-1"
+                      text-color="white"
+                    >
                       <v-avatar>
-                        <v-icon small>mdi-cellphone-android</v-icon>
-                      </v-avatar>8210-2309-4277
+                        <v-icon small>mdi-cellphone-android</v-icon> </v-avatar
+                      >8210-2309-4277
                     </v-chip>
                   </span>
 
-                  <span style="margin-top: 0.5rem;">
-                    <span class="ma-1" v-for="(contact, i) in contacts_btn" :key="i">
+                  <span style="margin-top: 0.5rem">
+                    <span
+                      class="ma-1"
+                      v-for="(contact, i) in contacts_btn"
+                      :key="i"
+                    >
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on }">
                           <v-btn
@@ -50,10 +64,10 @@
                             :color="contact.contact_color"
                             :href="contact.contact_url"
                           >
-                            <v-icon>{{contact.contact_icon}}</v-icon>
+                            <v-icon>{{ contact.contact_icon }}</v-icon>
                           </v-btn>
                         </template>
-                        <span>{{contact.contact_txt}}</span>
+                        <span>{{ contact.contact_txt }}</span>
                       </v-tooltip>
                     </span>
                   </span>
@@ -61,10 +75,16 @@
               </v-col>
             </v-row>
 
-            <v-row class="mb-2 cat_subsubtitle" style="text-align: center;" justify="center">
-              <span style="font-size: 0.75rem;">click to know more about me</span>
+            <v-row
+              class="mb-2 cat_subsubtitle"
+              style="text-align: center"
+              justify="center"
+            >
+              <span style="font-size: 0.75rem"
+                >click to know more about me</span
+              >
             </v-row>
-            <v-row class="mb-2" style="text-align: center;" justify="center">
+            <v-row class="mb-2" style="text-align: center" justify="center">
               <DownArrow />
             </v-row>
 
@@ -75,21 +95,24 @@
                 :color="this.show_exp ? `grey lighten-1` : `grey darken-4`"
                 :small="$vuetify.breakpoint.xsOnly"
                 text
-              >Experiences</v-btn>
+                >Experiences</v-btn
+              >
               <v-icon>mdi-slash-forward</v-icon>
               <v-btn
                 @click="handleShowSkills()"
                 :color="this.show_skills ? `grey lighten-1` : `grey darken-4`"
                 :small="$vuetify.breakpoint.xsOnly"
                 text
-              >Skills</v-btn>
+                >Skills</v-btn
+              >
               <v-icon>mdi-slash-forward</v-icon>
               <v-btn
                 @click="handleShowEtc()"
                 :color="this.show_etc ? `grey lighten-1` : `grey darken-4`"
                 :small="$vuetify.breakpoint.xsOnly"
                 text
-              >Etc</v-btn>
+                >Etc</v-btn
+              >
             </v-row>
             <v-divider class="mb-5" />
 
@@ -98,7 +121,10 @@
                 <span class="cat_subtitle">Academics & Work Experiences</span>
                 <div class="ml-n10 mt-5">
                   <AboutTimeline />
-                  <v-sheet style="text-align:center; margin-top:2rem;" color="transparent">
+                  <v-sheet
+                    style="text-align: center; margin-top: 2rem"
+                    color="transparent"
+                  >
                     <v-btn
                       class="ma-5"
                       fab
@@ -110,8 +136,22 @@
                       <!-- <v-icon>mdi-close</v-icon> -->
                       <v-icon>mdi-chevron-up</v-icon>
                     </v-btn>
-                    <v-btn class="ma-5" fab outlined @click="handleShowSkills()" text>skiils</v-btn>
-                    <v-btn class="ma-5" fab outlined @click="handleShowEtc()" text>Etc</v-btn>
+                    <v-btn
+                      class="ma-5"
+                      fab
+                      outlined
+                      @click="handleShowSkills()"
+                      text
+                      >skiils</v-btn
+                    >
+                    <v-btn
+                      class="ma-5"
+                      fab
+                      outlined
+                      @click="handleShowEtc()"
+                      text
+                      >Etc</v-btn
+                    >
                   </v-sheet>
                 </div>
               </v-row>
@@ -127,23 +167,45 @@
                   </v-flex>
                   <v-flex xs12 md6>
                     <span class="cat_subsubtitle ma-5">Programming</span>
-                    <SkillsCard skill_type="programming" style="margin:1rem;" />
+                    <SkillsCard skill_type="programming" style="margin: 1rem" />
                   </v-flex>
                   <v-flex xs12 md6>
-                    <span class="cat_subsubtitle ma-5">Design & Modeling</span>
-                    <SkillsCard skill_type="design" style="margin:1rem;" />
+                    <span class="cat_subsubtitle ma-5"
+                      >Library & Framework</span
+                    >
+                    <SkillsCard
+                      skill_type="library_framework"
+                      style="margin: 1rem"
+                    />
                   </v-flex>
+                  <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">tool & platform</span>
+                    <SkillsCard skill_type="tool" style="margin: 1rem" />
+                  </v-flex>
+                  <!-- <v-flex xs12 md6>
+                    <span class="cat_subsubtitle ma-5">Collaboration</span>
+                    <SkillsCard
+                      skill_type="collaboration"
+                      style="margin: 1rem"
+                    />
+                  </v-flex> -->
                   <v-flex xs12 md6>
                     <span class="cat_subsubtitle ma-5">Language</span>
-                    <SkillsCard skill_type="language" style="margin:1rem;" />
-                  </v-flex>
-                  <v-flex xs12 md6>
-                    <span class="cat_subsubtitle ma-5">ETC</span>
-                    <SkillsCard skill_type="etc" style="margin:1rem;" />
+                    <SkillsCard skill_type="language" style="margin: 1rem" />
                   </v-flex>
                   <v-flex xs12 md12>
-                    <v-sheet style="text-align:center; margin-top:2rem;" color="transparent">
-                      <v-btn class="ma-5" fab outlined @click="handleShowExp()" text>Exp</v-btn>
+                    <v-sheet
+                      style="text-align: center; margin-top: 2rem"
+                      color="transparent"
+                    >
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowExp()"
+                        text
+                        >Exp</v-btn
+                      >
                       <v-btn
                         class="ma-5"
                         fab
@@ -154,7 +216,14 @@
                       >
                         <v-icon>mdi-chevron-up</v-icon>
                       </v-btn>
-                      <v-btn class="ma-5" fab outlined @click="handleShowEtc()" text>Etc</v-btn>
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowEtc()"
+                        text
+                        >Etc</v-btn
+                      >
                     </v-sheet>
                   </v-flex>
                 </v-layout>
@@ -177,15 +246,23 @@
                     >
                       <v-list-item three-line>
                         <v-list-item-content>
-                          <div class="overline mb-1">{{item.years}}</div>
-                          <v-list-item-avatar tile size="80" color="transparent">
+                          <div class="overline mb-1">{{ item.years }}</div>
+                          <v-list-item-avatar
+                            tile
+                            size="80"
+                            color="transparent"
+                          >
                             <v-img :src="item.img_link" contain />
                           </v-list-item-avatar>
                           <div
                             class="mb-2"
-                            style="font-weight: 500; font-size: 1.2rem;"
-                          >{{item.title}}</div>
-                          <v-list-item-text class="mb-2">{{item.subtitle}}</v-list-item-text>
+                            style="font-weight: 500; font-size: 1.2rem"
+                          >
+                            {{ item.title }}
+                          </div>
+                          <v-list-item-text class="mb-2">{{
+                            item.subtitle
+                          }}</v-list-item-text>
                           <v-expand-transition>
                             <div v-show="item.show">
                               <!-- <v-divider></v-divider> -->
@@ -193,7 +270,8 @@
                                 class="ma-2"
                                 v-for="(j, txt) in item.contents"
                                 :key="j"
-                              >{{j}}</v-list-item-subtitle>
+                                >{{ j }}</v-list-item-subtitle
+                              >
                               <!-- ㆍ  -->
                             </div>
                           </v-expand-transition>
@@ -201,8 +279,14 @@
                       </v-list-item>
                       <v-card-actions>
                         <v-spacer />
-                        <v-btn class="mt-n5" icon @click="item.show = !item.show">
-                          <v-icon>{{ item.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                        <v-btn
+                          class="mt-n5"
+                          icon
+                          @click="item.show = !item.show"
+                        >
+                          <v-icon>{{
+                            item.show ? "mdi-chevron-up" : "mdi-chevron-down"
+                          }}</v-icon>
                         </v-btn>
                         <v-spacer />
                       </v-card-actions>
@@ -219,21 +303,30 @@
                     >
                       <v-list-item three-line>
                         <v-list-item-content>
-                          <div class="overline mb-1">{{item.years}}</div>
-                          <v-list-item-avatar tile size="80" color="transparent">
+                          <div class="overline mb-1">{{ item.years }}</div>
+                          <v-list-item-avatar
+                            tile
+                            size="80"
+                            color="transparent"
+                          >
                             <v-img :src="item.img_link" contain />
                           </v-list-item-avatar>
                           <div
                             class="mb-2"
-                            style="font-weight: 500; font-size: 1.2rem;"
-                          >{{item.title}}</div>
+                            style="font-weight: 500; font-size: 1.2rem"
+                          >
+                            {{ item.title }}
+                          </div>
                           <!-- <v-list-item-title class="headline mb-1">{{item.title}}</v-list-item-title> -->
-                          <v-list-item-text class="mb-2">{{item.subtitle}}</v-list-item-text>
+                          <v-list-item-text class="mb-2">{{
+                            item.subtitle
+                          }}</v-list-item-text>
                           <v-list-item-subtitle
                             class="mb-1"
                             v-for="(j, txt) in item.contents"
                             :key="j"
-                          >- {{j}}</v-list-item-subtitle>
+                            >- {{ j }}</v-list-item-subtitle
+                          >
                         </v-list-item-content>
                       </v-list-item>
                     </v-card>
@@ -241,12 +334,26 @@
 
                   <v-flex xs12 md12>
                     <v-sheet
-                      style="text-align:center; margin-top:2rem;"
+                      style="text-align: center; margin-top: 2rem"
                       color="transparent"
                       justify-center
                     >
-                      <v-btn class="ma-5" fab outlined @click="handleShowExp()" text>Exp</v-btn>
-                      <v-btn class="ma-5" fab outlined @click="handleShowSkills()" text>Skills</v-btn>
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowExp()"
+                        text
+                        >Exp</v-btn
+                      >
+                      <v-btn
+                        class="ma-5"
+                        fab
+                        outlined
+                        @click="handleShowSkills()"
+                        text
+                        >Skills</v-btn
+                      >
                       <v-btn
                         class="ma-5"
                         fab
@@ -278,7 +385,7 @@ export default {
   components: {
     SkillsCard,
     AboutTimeline,
-    DownArrow
+    DownArrow,
   },
   methods: {
     handleShowExp() {
@@ -295,7 +402,7 @@ export default {
       this.show_etc = !this.show_etc;
       this.show_exp = false;
       this.show_skills = false;
-    }
+    },
   },
   data: () => ({
     skill_type: "",
@@ -314,21 +421,21 @@ export default {
           contents: [
             "Auspices: ROK Ministry of National Defense, ROK Ministry of Science and ICT, OSAM(Open Source Academy for Military)",
             "Went through coding test, web knowledge test, and application evaluation and was selected as one of WEB division finalists.",
-            "Received a week of WEB group instruction, mainly about front-end."
+            "Received a week of WEB group instruction, mainly about front-end.",
           ],
-          show: false
+          show: false,
         },
         {
           years: "2019",
           title: "2019 ROK Ministry of National Defense Open Data Idea Contest",
           subtitle: "Finalist",
-          img_link: "https://www.data.go.kr/assets/imgs/opengraph.png",
+          img_link: require("@/assets/data_comp.jpeg"),
           contents: [
             "Auspices: ROK Ministry of National Defense, ROK Public Data Portal",
             "Established development plan for an Android application providing useful infotmation for Korean soldier and soldier-to-be",
-            "Gave an APP UI demonstration and presentation at National Defense Ministry of Korea."
+            "Gave an APP UI demonstration and presentation at National Defense Ministry of Korea.",
           ],
-          show: false
+          show: false,
         },
         {
           years: "2016",
@@ -339,9 +446,9 @@ export default {
           contents: [
             "Auspices: SAGE Korea",
             "Managed Piece, social enterprise business selling art puzzles illustrated by savant syndrome patients and distributing its revenue to those patients.",
-            "Selected as a national Team and advanced to SAGE World Cup 2016."
+            "Selected as a national Team and advanced to SAGE World Cup 2016.",
           ],
-          show: false
+          show: false,
         },
         {
           years: "2016",
@@ -350,23 +457,22 @@ export default {
           img_link: "https://www.gayoungpark.com/images/geckorea.png",
           contents: [
             "Auspices: GEC(Global Entrepreneur Challenge) Korea",
-            "Established a business strategy for ONGO, cultural asset restoration and replica production service using 3D printing technology."
+            "Established a business strategy for ONGO, cultural asset restoration and replica production service using 3D printing technology.",
           ],
-          show: false
+          show: false,
         },
         {
           years: "2016",
           title: "Wharton Korea Business Black Box",
           subtitle: "Ranked top 5",
-          img_link:
-            "https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/31100376_1833188946975674_7090591878680150016_n.png?_nc_cat=104&_nc_ohc=_Z3xOGCfsWMAX_O5jaF&_nc_ht=scontent-ssn1-1.xx&oh=c1b7bbadac11fc3cb2e66a6ab7fd1776&oe=5EC75A34",
+          img_link: require("@/assets/bbb.jpeg"),
           contents: [
             "Auspices: ROK Ministry of National Defense, ROK Public Data Portal, Baemin(배달의민족)",
             "Set a business plan for baby food regular delivery service, Baemin for Mom, under the competition’s theme ‘F&B market entry starategem for for Baemin(배달의민족)’.",
-            "Designed a logo and a rough version of application interface for the service and set a marketing plan"
+            "Designed a logo and a rough version of application interface for the service and set a marketing plan",
           ],
-          show: false
-        }
+          show: false,
+        },
         // {
         //   years: "2016",
         //   title: "The 7th Korea Youth Creative Design Competition",
@@ -381,52 +487,67 @@ export default {
       ],
       cert_data: [
         {
+          years: "2021",
+          title: "GCP QwikLabs",
+          subtitle: "Certificate",
+          img_link: require("@/assets/gcp.png"),
+          contents: [
+            "Intro to ML: Image Processing",
+            "BigQuery for Machine Learning",
+            "Data Engineering",
+            "Cloud Engineering",
+            "Google Cloud Essentials",
+          ],
+          show: false,
+        },
+        {
           years: "2019",
           title: "CIP(Craftsman Information Processing) Certificate",
           subtitle: "Certificate",
-          img_link: "https://msit.go.kr/cms/images/www/sub/sub6_1_3_img4.png",
+          img_link: require("@/assets/hrdk.jpeg"),
           contents: [],
-          show: false
+          show: false,
         },
         {
           years: "2019",
           title: "HSK(汉语水平考试) level 4",
           subtitle: "Chinese Proficiency Test",
-          img_link: "https://post-phinf.pstatic.net/MjAxODEyMDdfOTEg/MDAxNTQ0MTQ4MTA2NjY1.gRNbns047ZSx79a-JMUHYWXkWMlt4IKOSkmF8xYKwB8g.OTwnBTCWMk52WYneMFR6TpISwFawmdAEsmvogAxnQuIg.JPEG/080720151701300.jpg?type=w1200",
+          img_link:
+            "https://post-phinf.pstatic.net/MjAxODEyMDdfOTEg/MDAxNTQ0MTQ4MTA2NjY1.gRNbns047ZSx79a-JMUHYWXkWMlt4IKOSkmF8xYKwB8g.OTwnBTCWMk52WYneMFR6TpISwFawmdAEsmvogAxnQuIg.JPEG/080720151701300.jpg?type=w1200",
           contents: [],
-          show: false
+          show: false,
         },
-        {
-          years: "2016",
-          title: "ETS TOEFL(Test Of English as a Foreign Language)",
-          subtitle: "Score: 108",
-          img_link: "https://img.emg-services.net/HtmlPages/HtmlPage15627/ets-toefl-4cd.png",
-          contents: [],
-          show: false
-        }
-      ]
+        // {
+        //   years: "2016",
+        //   title: "ETS TOEFL(Test Of English as a Foreign Language)",
+        //   subtitle: "Score: 108",
+        //   img_link: "https://img.emg-services.net/HtmlPages/HtmlPage15627/ets-toefl-4cd.png",
+        //   contents: [],
+        //   show: false
+        // }
+      ],
     },
     contacts_btn: [
       {
         contact_icon: "mdi-linkedin",
         contact_color: "#2867B2",
         contact_txt: "Link in LinkedIn",
-        contact_url: "https://www.linkedin.com/in/jaeyoung-lee/"
+        contact_url: "https://www.linkedin.com/in/jaeyoung-lee/",
       },
       {
         contact_icon: "mdi-github-circle",
         contact_color: "#333",
         contact_txt: "Link in Github",
-        contact_url: "https://github.com/jaeleeps"
+        contact_url: "https://github.com/jaeleeps",
       },
       {
         contact_icon: "mdi-npm-variant-outline",
         contact_color: "#cc3534",
         contact_txt: "Link in NPM",
-        contact_url: "https://www.npmjs.com/package/kor-string-similarity"
-      }
-    ]
-  })
+        contact_url: "https://www.npmjs.com/package/kor-string-similarity",
+      },
+    ],
+  }),
 };
 </script>
 
