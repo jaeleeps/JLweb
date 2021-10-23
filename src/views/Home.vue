@@ -18,7 +18,8 @@
           class="ma-1 upper"
           style="font-size: 0.7rem; letter-spacing: 1px;"
         >
-          <v-icon :x-small="$vuetify.breakpoint.xsOnly" left :color="tag.color">{{tag.icon}}</v-icon>
+          <!-- <v-icon :x-small="$vuetify.breakpoint.xsOnly" left :color="tag.color">{{tag.icon}}</v-icon> -->
+          <Icon :color="tag.color" :icon="tag.icon" style="margin-right: 8px; font-size: 16px"></Icon>
           {{tag.title}}
         </v-chip>
       </div>
@@ -102,6 +103,7 @@
 // @ is an alias to /src
 import WindowFooter from "@/components/WindowFooter";
 import TypeAnimation from "@/components/TypeAnimation";
+import { Icon } from "@iconify/vue2";
 
 window.$ = require("jquery");
 window.JQuery = require("jquery");
@@ -117,25 +119,28 @@ export default {
     yPos: 0,
     etc: [
       {
-        title: "Programming",
+        title: "Web Dev",
         color: "#4c75a3",
-        icon: "mdi-account-group",
+        icon: "mdi:web",
         rating: ""
       },
       {
-        title: "Algorithm",
+        title: "Cloud",
         color: "#4c75a3",
-        icon: "mdi-voice",
+        icon: "akar-icons:cloud",
         rating: ""
       },
       {
-        title: "Design",
+        title: "Data",
         color: "#4c75a3",
-        icon: "mdi-party-popper",
+        icon: "bx:bx-data",
         rating: ""
       }
     ]
   }),
+  components: {
+    Icon,
+  },
   methods: {
     someMethod: function(event) {
       var x = event.pageX;
