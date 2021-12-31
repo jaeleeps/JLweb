@@ -33,7 +33,9 @@ export default {
         cat_subtitle:
           "Fullstack Web Developer | Data Engineer",
         info: [
-          "Typescript(Angular, Nest.js), Python(FastAPI, Flask), GCP, MySQL",
+          "Managed statistics updating application backed by Flask and handled business KPI request",
+          "Participated in development of education platform",
+          "Stack: Typescript(Angular, Nest.js), Python(FastAPI, Flask), GCP, MySQL",
         ],
       },
       {
@@ -51,7 +53,8 @@ export default {
         title: "Naver D2 - Campus Q",
         cat_subtitle: "Node.js Developer",
         info: [
-          "Node.js, React, MySQL",
+          "Developed forum-format learing management platform",
+          "Stack: Node.js, React, MySQL",
         ],
       },
       {
