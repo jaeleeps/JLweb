@@ -13,7 +13,7 @@ div {
 }
 
 p {
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-name: slidein;
   animation-iteration-count: infinite;
   animation-direction: reverse;
