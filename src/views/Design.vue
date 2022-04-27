@@ -1,6 +1,6 @@
 <template>
   <div class="back pa-10">
-    <v-content>
+    <v-main>
       <v-container fill-height>
         <v-layout justify-center align-center pb-10>
           <v-flex shrink xs11 md10>
@@ -21,7 +21,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-main>
   </div>
 </template>
 

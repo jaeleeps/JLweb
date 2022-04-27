@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="back">
-    <v-content>
+    <v-main>
       <v-container fill-height>
         <v-layout justify-center align-center pb-10>
           <v-flex shrink xs10 md9>
@@ -44,7 +44,7 @@
                     >
                       <v-avatar>
                         <v-icon small>mdi-cellphone-android</v-icon> </v-avatar
-                      >8210-2309-4277
+                      >470-815-6864
                     </v-chip>
                   </span>
 
@@ -88,7 +88,6 @@
               <DownArrow />
             </v-row>
 
-            <v-divider />
             <v-row justify="center">
               <v-btn
                 @click="handleShowExp()"
@@ -114,7 +113,6 @@
                 >Etc</v-btn
               >
             </v-row>
-            <v-divider class="mb-5" />
 
             <transition name="fade">
               <v-row v-show="show_exp">
@@ -372,7 +370,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-main>
   </div>
 </template>
 
