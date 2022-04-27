@@ -44,7 +44,7 @@
                     >
                       <v-avatar>
                         <v-icon small>mdi-cellphone-android</v-icon> </v-avatar
-                      >8210-2309-4277
+                      >470-815-6864
                     </v-chip>
                   </span>
 
