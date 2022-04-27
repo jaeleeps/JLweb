@@ -88,7 +88,6 @@
               <DownArrow />
             </v-row>
 
-            <v-divider />
             <v-row justify="center">
               <v-btn
                 @click="handleShowExp()"
@@ -114,7 +113,6 @@
                 >Etc</v-btn
               >
             </v-row>
-            <v-divider class="mb-5" />
 
             <transition name="fade">
               <v-row v-show="show_exp">
