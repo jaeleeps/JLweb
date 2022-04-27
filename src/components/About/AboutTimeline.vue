@@ -10,6 +10,12 @@
         <span v-text="item.year"></span>
       </template>
       <v-card class="elevation-2">
+        <v-img
+            v-if="item.hasOwnProperty('thumbnail')"
+            height="120"
+            contain
+            :src="item.thumbnail"
+        ></v-img>
         <v-card-title class="title" v-text="item.title" />
         <v-card-subtitle style="font-weight: 600" v-text="item.cat_subtitle" />
         <v-card-text
@@ -28,10 +34,27 @@ export default {
   data: () => ({
     academics_data: [
       {
-        year: "May. 2020 - Current",
+        year: "Jan. 2022 - May. 2022",
+        thumbnail: require('@/assets/experience/gatech_coc.png'),
+        title: "Georgia Institue of Technology",
+        cat_subtitle:
+            "Teaching Assitant",
+        info: [
+          "CS2340 (Object and Design)"
+        ],
+        links: [
+          {
+            title: "course website",
+            href: "https://github.gatech.edu/pages/gtobdes/obdes/"
+          }
+        ]
+      },
+      {
+        year: "May. 2020 - Jan. 2022",
+        thumbnail: require('@/assets/experience/jaranda.png'),
         title: "Jaranda",
         cat_subtitle:
-          "Fullstack Web Developer | Data Engineer",
+          "Fullstack Web Developer",
         info: [
           "Typescript(Angular, Nest.js), Python(FastAPI, Flask), GCP, MySQL",
         ],
@@ -39,6 +62,7 @@ export default {
       {
         year: "Sep. 2018 - Apr. 2020",
         title: "Republic of Korea Marine Corps",
+        thumbnail: require('@/assets/experience/rokmc.jpeg'),
         cat_subtitle:
           "Sergent | Informaion Operations Officer, Corps Translator(Eng-Kor)",
         info: [
@@ -48,6 +72,7 @@ export default {
       },
       {
         year: "May. 2018 - Aug. 2018",
+        thumbnail: require('@/assets/experience/naver_d2.png'),
         title: "Naver D2 - Campus Q",
         cat_subtitle: "Node.js Developer",
         info: [
@@ -56,6 +81,7 @@ export default {
       },
       {
         year: "Aug.2017 - Current",
+        thumbnail: require('@/assets/experience/gatech_coc.png'),
         title: "Georgia Institue of Technology",
         cat_subtitle: "Bachelor of Science in Computer Science",
         info: [
@@ -66,6 +92,7 @@ export default {
       },
       {
         year: "2014~2017",
+        thumbnail: require('@/assets/experience/hafs.png'),
         title: "Hankuk Academy of Foreign Studides",
         cat_subtitle: "International Div. Class of 2017",
         info: [
