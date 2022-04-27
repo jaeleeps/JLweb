@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="back">
-    <v-content>
+    <v-main>
       <v-container fill-height>
         <v-layout justify-center align-center pb-10>
           <v-flex shrink xs10 md9>
@@ -372,7 +372,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-main>
   </div>
 </template>
 
